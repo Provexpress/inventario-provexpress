@@ -3,48 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Provexpress – Suite de Gestión de Inventario & Métricas</title>
-  <meta name="description" content="Plataforma corporativa de control de inventario tecnológico, dashboard ejecutivo y generador de correos para Provexpress SAS.">
-
-  <!-- Favicons -->
+  <title>Provexpress – Suite de Inventario & Métricas</title>
+  <meta name="description" content="Dashboard ejecutivo de control de inventario tecnológico, métricas en tiempo real y generador de correos corporativos para Provexpress SAS.">
   <link rel="icon" type="image/png" sizes="32x32" href="icons/provex_icon_32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="icons/provex_icon_180.png">
   <meta name="theme-color" content="#1A2B6B">
   <link rel="manifest" href="manifest.json">
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- MSAL -->
   <script src="https://alcdn.msauth.net/browser/2.38.3/js/msal-browser.min.js"></script>
-  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="app-body">
 
-<!-- ══════════════════════════════════
-     AUTH GATE
-══════════════════════════════════ -->
+<!-- ══ AUTH GATE ══ -->
 <section class="auth-gate" id="authGate">
   <div class="auth-card">
     <div class="auth-brand-panel">
       <img src="icons/logo.webp" alt="Provexpress" class="auth-brand-logo">
       <span class="auth-chip">PROVEX INVENTARIO SUITE</span>
       <h2>Plataforma de Control de Inventario & Métricas en Tiempo Real</h2>
-      <p>Gestiona stock diario, valida variaciones, visualiza indicadores ejecutivos y envía reportes corporativos en tiempo real.</p>
-      <div class="auth-feature-row"><span class="auth-feature-dot"></span>Sincronización directa con Excel OneDrive y Microsoft Graph API.</div>
-      <div class="auth-feature-row"><span class="auth-feature-dot purple"></span>Acceso autenticado vía Entra ID / Microsoft 365.</div>
+      <p>Gestiona el stock diario, valida variaciones, visualiza indicadores ejecutivos por categoría y marca, y envía reportes corporativos en tiempo real.</p>
+      <div class="auth-feature-row"><span class="auth-feature-dot"></span> Sincronización directa con Excel OneDrive y Microsoft Graph API.</div>
+      <div class="auth-feature-row"><span class="auth-feature-dot purple"></span> Acceso autenticado vía Entra ID / Microsoft 365.</div>
     </div>
     <div class="auth-action-panel">
-      <img src="icons/icono-provexpress.png" alt="Provexpress" class="auth-logo" width="72" height="72">
+      <img src="icons/icono-provexpress.png" alt="Provexpress" class="auth-logo" width="68" height="68">
       <p class="auth-eyebrow">Acceso Corporativo</p>
       <h1 class="auth-title">Ingresar a Provex Inventario</h1>
-      <p class="auth-copy">Usa tu cuenta corporativa de Microsoft 365 para acceder a las métricas y gestión de inventario tecnológico.</p>
+      <p class="auth-copy">Usa tu cuenta corporativa de Microsoft 365 para acceder a las métricas ejecutivas y la gestión de inventario tecnológico.</p>
       <button id="authConnectBtn" type="button" class="auth-button" onclick="loginMicrosoft365()">
         <span class="auth-button-icon">M365</span>
         <span>Continuar con Microsoft 365</span>
@@ -54,9 +44,7 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════════
-     APP SHELL
-══════════════════════════════════ -->
+<!-- ══ APP SHELL ══ -->
 <div id="appShell" class="app-locked">
 
   <!-- NAV -->
@@ -66,19 +54,19 @@
         <img src="icons/logo.webp" alt="Provexpress" class="nav-logo">
         <span class="nav-badge">Inventario & Métricas</span>
       </div>
-      <div class="nav-user-panel">
-        <div class="sync-badge"><span class="sync-dot"></span><span id="syncLabel">Cargando datos...</span></div>
+      <div class="nav-right">
+        <div class="sync-badge"><span class="sync-dot"></span><span id="syncLabel">Cargando…</span></div>
         <div id="authUser" class="user-info" hidden></div>
         <button id="authLogoutBtn" type="button" class="btn-logout" onclick="logoutMicrosoft365()" hidden>
-          <i class="fa-solid fa-right-from-bracket"></i> Salir
+          <i class="fa-solid fa-right-from-bracket"></i><span class="hide-xs">Salir</span>
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- TAB BAR -->
+  <!-- TABS -->
   <div class="tab-bar" role="tablist">
-    <button class="tab-btn active" data-tab="dashboard" role="tab" aria-selected="true">
+    <button class="tab-btn active" data-tab="dashboard" role="tab">
       <i class="fa-solid fa-chart-pie"></i> Dashboard
     </button>
     <button class="tab-btn" data-tab="manager" role="tab">
@@ -89,135 +77,202 @@
     </button>
   </div>
 
-  <!-- MAIN -->
   <main class="main-content">
 
-    <!-- ══ TAB 1: DASHBOARD ══ -->
+    <!-- ══════════════════════════════════
+         TAB 1 — DASHBOARD EJECUTIVO
+    ══════════════════════════════════ -->
     <section id="tab-dashboard" class="tab-page" role="tabpanel">
 
-      <!-- KPI Row -->
-      <div class="kpi-grid" id="kpiGrid">
-        <div class="kpi-card">
-          <div class="kpi-header"><span class="kpi-label">Stock Total</span><div class="kpi-icon blue"><i class="fa-solid fa-boxes-stacked"></i></div></div>
-          <div id="kpiTotalUnits" class="kpi-value">—</div>
-          <div class="kpi-subtext"><span id="kpiTotalChange" class="kpi-change up"></span> Unidades disponibles hoy</div>
+      <!-- KPI CARDS (6) -->
+      <div class="kpi-row" id="kpiRow">
+        <div class="kpi-card" style="--kpi-color:var(--blue)">
+          <div class="kpi-header">
+            <span class="kpi-label">Stock Total Unidades</span>
+            <div class="kpi-icon blue"><i class="fa-solid fa-boxes-stacked"></i></div>
+          </div>
+          <div id="kpiUnits" class="kpi-value">—</div>
+          <div class="kpi-sub">Todas las categorías</div>
         </div>
-        <div class="kpi-card">
-          <div class="kpi-header"><span class="kpi-label">Valor del Inventario (COP)</span><div class="kpi-icon green"><i class="fa-solid fa-sack-dollar"></i></div></div>
-          <div id="kpiTotalValue" class="kpi-value">—</div>
-          <div class="kpi-subtext"><i class="fa-solid fa-shield-halved"></i> Precio de lista + IVA estimado</div>
+
+        <div class="kpi-card" style="--kpi-color:var(--green)">
+          <div class="kpi-header">
+            <span class="kpi-label">Valor Inventario (COP)</span>
+            <div class="kpi-icon green"><i class="fa-solid fa-sack-dollar"></i></div>
+          </div>
+          <div id="kpiValue" class="kpi-value">—</div>
+          <div class="kpi-sub" id="kpiValueUSD">USD: —</div>
         </div>
-        <div class="kpi-card">
-          <div class="kpi-header"><span class="kpi-label">Productos Distintos</span><div class="kpi-icon purple"><i class="fa-solid fa-list-check"></i></div></div>
-          <div id="kpiProducts" class="kpi-value">—</div>
-          <div class="kpi-subtext">Referencias únicas de catálogo</div>
+
+        <div class="kpi-card" style="--kpi-color:var(--purple)">
+          <div class="kpi-header">
+            <span class="kpi-label">Referencias Únicas</span>
+            <div class="kpi-icon purple"><i class="fa-solid fa-list-check"></i></div>
+          </div>
+          <div id="kpiRefs" class="kpi-value">—</div>
+          <div class="kpi-sub">N/P distintos en catálogo</div>
         </div>
-        <div class="kpi-card">
-          <div class="kpi-header"><span class="kpi-label">Categorías Activas</span><div class="kpi-icon amber"><i class="fa-solid fa-tags"></i></div></div>
-          <div id="kpiCategories" class="kpi-value">—</div>
-          <div class="kpi-subtext">Portátiles, Monitores, Impresoras…</div>
+
+        <div class="kpi-card" style="--kpi-color:var(--amber)">
+          <div class="kpi-header">
+            <span class="kpi-label">Categorías Activas</span>
+            <div class="kpi-icon amber"><i class="fa-solid fa-tags"></i></div>
+          </div>
+          <div id="kpiCats" class="kpi-value">—</div>
+          <div class="kpi-sub" id="kpiSecs">—  secciones</div>
         </div>
-        <div class="kpi-card">
-          <div class="kpi-header"><span class="kpi-label">Valor en USD</span><div class="kpi-icon cyan"><i class="fa-solid fa-dollar-sign"></i></div></div>
-          <div id="kpiValueUSD" class="kpi-value">—</div>
-          <div class="kpi-subtext"><span id="kpiTrm">TRM: $ —</span></div>
+
+        <div class="kpi-card" style="--kpi-color:var(--cyan)">
+          <div class="kpi-header">
+            <span class="kpi-label">TRM Promedio Ingreso</span>
+            <div class="kpi-icon cyan"><i class="fa-solid fa-dollar-sign"></i></div>
+          </div>
+          <div id="kpiTrm" class="kpi-value">—</div>
+          <div class="kpi-sub">Histórico en período</div>
         </div>
-        <div class="kpi-card">
-          <div class="kpi-header"><span class="kpi-label">Productos con Stock Bajo</span><div class="kpi-icon rose"><i class="fa-solid fa-triangle-exclamation"></i></div></div>
-          <div id="kpiLowStock" class="kpi-value">—</div>
-          <div class="kpi-subtext">Con menos de 5 unidades disponibles</div>
+
+        <div class="kpi-card" style="--kpi-color:var(--rose)">
+          <div class="kpi-header">
+            <span class="kpi-label">Alertas Stock Bajo</span>
+            <div class="kpi-icon rose"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          </div>
+          <div id="kpiLow" class="kpi-value">—</div>
+          <div class="kpi-sub">Productos con &lt; 5 unidades</div>
         </div>
       </div>
 
-      <!-- Charts -->
-      <div class="charts-grid">
-        <div class="chart-card" style="grid-column: 1 / -1;">
-          <div class="chart-title"><i class="fa-solid fa-chart-line"></i> Tendencia de Stock por Día (Mes Actual)</div>
-          <canvas id="trendChart" height="90"></canvas>
-        </div>
+      <!-- CHARTS ROW -->
+      <div class="charts-row">
+        <!-- Trend (wide) -->
         <div class="chart-card">
-          <div class="chart-title"><i class="fa-solid fa-chart-pie"></i> Distribución por Categoría</div>
-          <canvas id="categoryChart" height="220"></canvas>
+          <div class="chart-title"><i class="fa-solid fa-chart-line"></i> Evolución Diaria del Stock (días registrados del mes)</div>
+          <canvas id="chartTrend" height="110"></canvas>
         </div>
+        <!-- Donut por categoría -->
         <div class="chart-card">
-          <div class="chart-title"><i class="fa-solid fa-chart-bar"></i> Stock por Marca (Top 8)</div>
-          <canvas id="brandChart" height="220"></canvas>
+          <div class="chart-title"><i class="fa-solid fa-chart-pie"></i> Unidades por Categoría</div>
+          <canvas id="chartCat" height="200"></canvas>
+        </div>
+        <!-- Bar marcas -->
+        <div class="chart-card">
+          <div class="chart-title"><i class="fa-solid fa-chart-bar"></i> Top Marcas (unidades)</div>
+          <canvas id="chartBrand" height="200"></canvas>
         </div>
       </div>
 
-      <!-- Category Cards Summary -->
+      <!-- SECTION PILLS (real data) -->
       <div class="chart-card">
-        <div class="chart-title"><i class="fa-solid fa-layer-group"></i> Resumen por Categoría</div>
-        <div class="cat-summary-grid" id="catSummaryGrid">
-          <!-- Injected by JS -->
+        <div class="chart-title"><i class="fa-solid fa-table-cells"></i> Stock por Sección</div>
+        <div class="section-pills" id="sectionPills"></div>
+      </div>
+
+      <!-- CATEGORY DETAIL CARDS -->
+      <div class="chart-card">
+        <div class="chart-title"><i class="fa-solid fa-layer-group"></i> Detalle por Categoría</div>
+        <div class="cat-grid" id="catGrid"></div>
+      </div>
+
+      <!-- BRAND TABLE -->
+      <div class="chart-card">
+        <div class="chart-title"><i class="fa-solid fa-ranking-star"></i> Ranking de Marcas</div>
+        <div class="brand-table-wrap">
+          <table class="brand-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Marca</th>
+                <th>Unidades</th>
+                <th>% del Total</th>
+                <th>Distribución</th>
+              </tr>
+            </thead>
+            <tbody id="brandTableBody"></tbody>
+          </table>
         </div>
       </div>
     </section>
 
-    <!-- ══ TAB 2: GESTOR DE INVENTARIO ══ -->
+    <!-- ══════════════════════════════════
+         TAB 2 — GESTOR DE INVENTARIO
+    ══════════════════════════════════ -->
     <section id="tab-manager" class="tab-page" role="tabpanel" hidden>
       <div class="table-card">
 
-        <!-- Controls -->
         <div class="table-controls">
           <div class="search-box">
             <i class="fa-solid fa-magnifying-glass search-icon"></i>
             <input type="text" id="searchInput" class="search-input" placeholder="Buscar por N/P, producto, marca…">
           </div>
-          <div class="filter-group">
-            <select id="sectionFilter" class="select-filter">
+          <div class="filter-row">
+            <select id="filterSec" class="select-filter">
               <option value="">Todas las secciones</option>
-              <option value="EQUIPOS PARA RENTA">Equipos para Renta</option>
-              <option value="HP">HP</option>
-              <option value="LENOVO">LENOVO</option>
-              <option value="DELL">DELL</option>
-              <option value="MONITORES">Monitores</option>
-              <option value="IMPRESORAS">Impresoras</option>
-              <option value="CELULARES">Celulares</option>
-              <option value="ACCESORIOS Y PERIFÉRICOS">Accesorios & Periféricos</option>
+              <option>EQUIPOS PARA RENTA</option>
+              <option>HP</option>
+              <option>LENOVO</option>
+              <option>DELL</option>
+              <option>MONITORES</option>
+              <option>IMPRESORAS</option>
+              <option>CELULARES</option>
+              <option>ACCESORIOS Y PERIFÉRICOS</option>
             </select>
-            <select id="catFilter" class="select-filter">
+            <select id="filterCat" class="select-filter">
               <option value="">Todas las categorías</option>
-              <option value="PORTÁTILES">PORTÁTILES</option>
-              <option value="DESKTOPS / PCS">DESKTOPS / PCS</option>
-              <option value="MONITORES">MONITORES</option>
-              <option value="IMPRESORAS">IMPRESORAS</option>
-              <option value="CELULARES / MÓVILES">CELULARES / MÓVILES</option>
-              <option value="DIADEMAS / AUDIO">DIADEMAS / AUDIO</option>
-              <option value="PERIFÉRICOS / MOUSE & TECLADO">PERIFÉRICOS</option>
-              <option value="ALMACENAMIENTO / SSD">ALMACENAMIENTO / SSD</option>
+              <option>PORTÁTILES</option>
+              <option>DESKTOPS / PCS</option>
+              <option>WORKSTATIONS</option>
+              <option>MONITORES</option>
+              <option>IMPRESORAS</option>
+              <option>CELULARES / MÓVILES</option>
+              <option>DIADEMAS / AUDIO</option>
+              <option>PERIFÉRICOS / MOUSE & TECLADO</option>
+              <option>ALMACENAMIENTO / SSD</option>
+              <option>ACCESORIOS / BASES REFRIGERANTES</option>
+              <option>ACCESORIOS / MORRALES</option>
+              <option>CABLES / CONECTIVIDAD</option>
+              <option>TARJETAS DE CONTROL</option>
             </select>
-            <select id="brandFilter" class="select-filter">
+            <select id="filterBrand" class="select-filter">
               <option value="">Todas las marcas</option>
-              <option value="HP">HP</option>
-              <option value="LENOVO">LENOVO</option>
-              <option value="DELL">DELL</option>
-              <option value="SAMSUNG">SAMSUNG</option>
-              <option value="LOGITECH">LOGITECH</option>
-              <option value="KYOCERA">KYOCERA</option>
-              <option value="MOTOROLA">MOTOROLA</option>
-              <option value="APPLE">APPLE</option>
+              <option>HP</option>
+              <option>LENOVO</option>
+              <option>DELL</option>
+              <option>APPLE</option>
+              <option>SAMSUNG</option>
+              <option>LOGITECH</option>
+              <option>POLY / PLANTRONICS</option>
+              <option>GENIUS</option>
+              <option>KYOCERA</option>
+              <option>MOTOROLA</option>
+              <option>ADATA</option>
+              <option>TARGUS</option>
+              <option>JALTECH</option>
+            </select>
+            <select id="filterStock" class="select-filter">
+              <option value="">Todo el stock</option>
+              <option value="low">Stock bajo (&lt; 5)</option>
+              <option value="zero">Sin stock (0)</option>
+              <option value="ok">Stock OK (≥ 5)</option>
             </select>
           </div>
-          <button id="btnAddProduct" type="button" class="btn-add-product" onclick="openAddModal()">
+          <button class="btn-add" onclick="openAddModal()">
             <i class="fa-solid fa-plus"></i> Nuevo Producto
           </button>
         </div>
 
-        <!-- Info bar -->
-        <div class="table-info-bar">
-          <span>Mostrando <strong id="recordCount">0</strong> registros</span>
-          <span style="color:var(--border)">|</span>
-          <span>Total en vista: <strong id="viewTotalUnits">0</strong> unidades · <strong id="viewTotalValue">$ 0</strong></span>
+        <div class="table-info">
+          <span>Mostrando <strong id="recCount">0</strong> de <strong id="totalCount">0</strong> registros</span>
+          <span class="sep">|</span>
+          <span>Unidades en vista: <strong id="viewUnits">0</strong></span>
+          <span class="sep">|</span>
+          <span>Valor en vista: <strong id="viewVal">$ 0</strong></span>
         </div>
 
-        <!-- Table -->
         <div class="table-responsive">
-          <table class="data-table" id="inventoryTable">
+          <table class="data-table">
             <thead>
               <tr>
-                <th style="width:40px; text-align:center;">#</th>
-                <th style="width:54px; text-align:center;">Foto</th>
+                <th style="width:36px;text-align:center;">#</th>
+                <th style="width:50px;text-align:center;">Foto</th>
                 <th>Sección</th>
                 <th>Categoría</th>
                 <th>Marca</th>
@@ -225,10 +280,10 @@
                 <th>Producto / Especificaciones</th>
                 <th style="text-align:right;">Costo COP</th>
                 <th style="text-align:center;">IVA</th>
-                <th style="text-align:center;">F. Ingreso</th>
-                <th style="text-align:center;">Unidades HOY</th>
+                <th style="text-align:center;">Ingreso</th>
+                <th style="text-align:center;min-width:110px;">Unidades HOY</th>
                 <th style="text-align:right;">Valor Stock</th>
-                <th style="text-align:center;">Acciones</th>
+                <th style="text-align:center;width:70px;">Acc.</th>
               </tr>
             </thead>
             <tbody id="tableBody"></tbody>
@@ -237,29 +292,31 @@
       </div>
     </section>
 
-    <!-- ══ TAB 3: CORREO CORPORATIVO ══ -->
+    <!-- ══════════════════════════════════
+         TAB 3 — CORREO CORPORATIVO
+    ══════════════════════════════════ -->
     <section id="tab-email" class="tab-page" role="tabpanel" hidden>
       <div class="table-card">
-        <div class="email-actions-bar">
+        <div class="email-topbar">
           <div class="email-meta">
-            <strong><i class="fa-solid fa-envelope-open-text"></i> Correo de Inventario Corporativo</strong><br>
+            <strong><i class="fa-solid fa-envelope-open-text"></i> Correo Corporativo de Inventario</strong><br>
             Para: <strong>especialista.preventa@provexpress.com.co</strong> ·
-            Asunto: <strong id="emailSubject">INVENTARIO [HOY] TECNOLOGIA</strong>
+            Asunto: <strong id="emailSubject">—</strong>
           </div>
-          <button id="btnSendEmail" type="button" class="btn-success" onclick="handleSendAndSync()">
+          <button id="btnSend" type="button" class="btn-send" onclick="handleSend()">
             <i class="fa-solid fa-paper-plane"></i> Confirmar, Enviar y Actualizar Excel
           </button>
         </div>
-        <div class="email-preview-box" id="emailPreviewContainer"></div>
+        <div class="email-preview-box" id="emailPreview"></div>
       </div>
     </section>
 
   </main>
 </div>
 
-<!-- ══ MODAL: NUEVO / EDITAR PRODUCTO ══ -->
-<div class="modal-overlay hidden" id="productModal" onclick="handleModalOverlayClick(event)">
-  <div class="modal-card" id="productModalCard">
+<!-- ══ MODAL ══ -->
+<div class="modal-overlay hidden" id="productModal" onclick="handleOverlayClick(event)">
+  <div class="modal-card" id="modalCard">
     <div class="modal-header">
       <h3 id="modalTitle"><i class="fa-solid fa-plus-circle"></i> Nuevo Producto</h3>
       <button type="button" class="modal-close" onclick="closeModal()">✕</button>
@@ -268,85 +325,81 @@
       <div class="form-grid">
         <div class="form-group">
           <label class="form-label">Sección *</label>
-          <select id="fldSeccion" class="form-select">
-            <option value="EQUIPOS PARA RENTA">EQUIPOS PARA RENTA</option>
-            <option value="HP">HP</option>
-            <option value="LENOVO">LENOVO</option>
-            <option value="DELL">DELL</option>
-            <option value="MONITORES">MONITORES</option>
-            <option value="IMPRESORAS">IMPRESORAS</option>
-            <option value="CELULARES">CELULARES</option>
-            <option value="ACCESORIOS Y PERIFÉRICOS">ACCESORIOS Y PERIFÉRICOS</option>
+          <select id="fSec" class="form-select">
+            <option>EQUIPOS PARA RENTA</option>
+            <option>HP</option><option>LENOVO</option><option>DELL</option>
+            <option>MONITORES</option><option>IMPRESORAS</option>
+            <option>CELULARES</option><option>ACCESORIOS Y PERIFÉRICOS</option>
           </select>
         </div>
         <div class="form-group">
           <label class="form-label">Categoría *</label>
-          <select id="fldCategoria" class="form-select">
-            <option value="PORTÁTILES">PORTÁTILES</option>
-            <option value="DESKTOPS / PCS">DESKTOPS / PCS</option>
-            <option value="WORKSTATIONS">WORKSTATIONS</option>
-            <option value="MONITORES">MONITORES</option>
-            <option value="IMPRESORAS">IMPRESORAS</option>
-            <option value="CELULARES / MÓVILES">CELULARES / MÓVILES</option>
-            <option value="DIADEMAS / AUDIO">DIADEMAS / AUDIO</option>
-            <option value="PERIFÉRICOS / MOUSE & TECLADO">PERIFÉRICOS / MOUSE & TECLADO</option>
-            <option value="ALMACENAMIENTO / SSD">ALMACENAMIENTO / SSD</option>
-            <option value="ACCESORIOS / MORRALES">ACCESORIOS / MORRALES</option>
-            <option value="CABLES / CONECTIVIDAD">CABLES / CONECTIVIDAD</option>
-            <option value="EQUIPOS PARA RENTA">EQUIPOS PARA RENTA</option>
+          <select id="fCat" class="form-select">
+            <option>PORTÁTILES</option>
+            <option>DESKTOPS / PCS</option>
+            <option>WORKSTATIONS</option>
+            <option>MONITORES</option>
+            <option>IMPRESORAS</option>
+            <option>CELULARES / MÓVILES</option>
+            <option>DIADEMAS / AUDIO</option>
+            <option>PERIFÉRICOS / MOUSE & TECLADO</option>
+            <option>ALMACENAMIENTO / SSD</option>
+            <option>ACCESORIOS / BASES REFRIGERANTES</option>
+            <option>ACCESORIOS / MORRALES</option>
+            <option>CABLES / CONECTIVIDAD</option>
+            <option>TARJETAS DE CONTROL</option>
+            <option>EQUIPOS PARA RENTA</option>
           </select>
         </div>
         <div class="form-group">
           <label class="form-label">Marca *</label>
-          <input id="fldMarca" type="text" class="form-input" placeholder="HP, LENOVO, DELL…" style="text-transform:uppercase;">
+          <input id="fMarca" type="text" class="form-input" placeholder="HP, LENOVO, DELL…">
         </div>
         <div class="form-group">
           <label class="form-label">N/P (Part Number) *</label>
-          <input id="fldNP" type="text" class="form-input" placeholder="Ej: BH8M4LT" style="text-transform:uppercase;">
+          <input id="fNP" type="text" class="form-input" placeholder="Ej: BH8M4LT">
         </div>
         <div class="form-group full">
-          <label class="form-label">Descripción del Producto *</label>
-          <textarea id="fldProducto" class="form-textarea" placeholder="Portátil HP ProBook / Procesador: Intel Core i5 / Memoria: 16GB / Disco: 512 SSD…"></textarea>
+          <label class="form-label">Descripción completa del producto *</label>
+          <textarea id="fProd" class="form-textarea" placeholder="Portátil HP ProBook / Procesador: Intel Core i5 / Memoria: 16GB / Disco: 512 SSD / S.O.: Win 11 Pro…"></textarea>
         </div>
         <div class="form-group">
           <label class="form-label">Costo en COP *</label>
-          <input id="fldCosto" type="number" class="form-input" placeholder="18500000" min="0">
+          <input id="fCosto" type="number" class="form-input" placeholder="18500000" min="0">
         </div>
         <div class="form-group">
           <label class="form-label">¿Incluye IVA?</label>
-          <select id="fldIva" class="form-select">
-            <option value="Sí">Sí, incluye IVA</option>
+          <select id="fIva" class="form-select">
+            <option value="Sí">Sí, con IVA</option>
             <option value="No">No incluye IVA</option>
           </select>
         </div>
         <div class="form-group">
-          <label class="form-label">TRM al momento del ingreso</label>
-          <input id="fldTrm" type="number" class="form-input" placeholder="4150" value="4150">
+          <label class="form-label">TRM al ingreso</label>
+          <input id="fTrm" type="number" class="form-input" placeholder="4150" value="4150">
         </div>
         <div class="form-group">
-          <label class="form-label">Fecha de Ingreso</label>
-          <input id="fldFecha" type="date" class="form-input">
+          <label class="form-label">Fecha de ingreso</label>
+          <input id="fFecha" type="date" class="form-input">
         </div>
         <div class="form-group">
-          <label class="form-label">Unidades Disponibles (HOY) *</label>
-          <input id="fldCantidad" type="number" class="form-input" placeholder="0" min="0" value="0">
+          <label class="form-label">Unidades disponibles (HOY) *</label>
+          <input id="fQty" type="number" class="form-input" placeholder="0" min="0" value="0">
         </div>
       </div>
-      <p class="form-note"><i class="fa-solid fa-circle-info"></i> Al guardar, el producto se añade al gestor de inventario y al correo corporativo automáticamente. El Excel OneDrive se actualiza al hacer clic en "Enviar Correo".</p>
+      <p class="form-note"><i class="fa-solid fa-circle-info"></i> El producto se añade inmediatamente al Gestor, al Dashboard y a la previsualización del Correo. El Excel OneDrive se actualiza al enviar el correo.</p>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn-cancel" onclick="closeModal()">Cancelar</button>
-      <button type="button" class="btn-primary" id="btnSaveProduct" onclick="saveProduct()">
+      <button type="button" class="btn-primary" onclick="saveProduct()">
         <i class="fa-solid fa-floppy-disk"></i> Guardar Producto
       </button>
     </div>
   </div>
 </div>
 
-<!-- TOAST -->
 <div id="toast"></div>
 
-<!-- Scripts -->
 <script src="js/auth.js"></script>
 <script src="js/app.js"></script>
 </body>
