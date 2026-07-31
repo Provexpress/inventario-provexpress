@@ -17,6 +17,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
+  <!-- Microsoft Authentication Library (MSAL) -->
+  <script src="https://alcdn.msauth.net/browser/2.38.3/js/msal-browser.min.js"></script>
+
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   
@@ -25,7 +28,7 @@
 </head>
 <body class="app-body">
 
-  <!-- AUTH GATE (CORPORATE MICROSOFT 365 LOGIN MATCHING PROVEX-ONE) -->
+  <!-- AUTH GATE (CORPORATE MICROSOFT 365 LOGIN MATCHING FORECAST & PROVEX-ONE) -->
   <section class="auth-gate" id="authGate" aria-label="Inicio de sesión corporativo">
     <div class="auth-card">
       <div class="auth-brand-panel">
@@ -39,7 +42,7 @@
         </div>
         <div class="auth-feature-row">
           <span class="auth-feature-dot purple"></span>
-          Acceso seguro para usuarios autorizados de Provexpress SAS.
+          Acceso autenticado vía Entra ID / Microsoft 365.
         </div>
       </div>
 
@@ -49,12 +52,12 @@
         <h1 class="auth-title">Ingresar a Provex Inventario</h1>
         <p class="auth-copy">Usa tu cuenta corporativa de Microsoft 365 para acceder a las métricas y gestión de inventario.</p>
         
-        <button type="button" id="authConnectBtn" class="auth-button">
+        <button type="button" id="authConnectBtn" onclick="loginMicrosoft365()" class="auth-button">
           <span class="auth-button-icon">M365</span>
           <span>Continuar con Microsoft 365</span>
         </button>
         
-        <p class="auth-note">Solo personal autorizado por Provexpress SAS.</p>
+        <p class="auth-note">Autenticación oficial Provexpress (Azure Tenant e6805558).</p>
       </div>
     </div>
   </section>
@@ -72,7 +75,7 @@
         
         <div class="nav-user-panel">
           <div id="authUser" class="user-info" hidden></div>
-          <button type="button" id="authLogoutBtn" class="btn-logout" hidden>
+          <button type="button" id="authLogoutBtn" onclick="logoutMicrosoft365()" class="btn-logout" hidden>
             <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
           </button>
         </div>
@@ -241,7 +244,8 @@
     </main>
   </div>
 
-  <!-- App Script -->
+  <!-- App Scripts -->
+  <script src="js/auth.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
