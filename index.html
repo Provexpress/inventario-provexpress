@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Provexpress - Suite de Gestión de Inventario & Métricas</title>
+  
+  <!-- Favicons & Branding -->
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/provex_icon_32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/provex_icon_180.png">
+  <meta name="theme-color" content="#1A2B6B">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Google Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="app-body">
+
+  <!-- AUTH GATE (CORPORATE MICROSOFT 365 LOGIN MATCHING PROVEX-ONE) -->
+  <section class="auth-gate" id="authGate" aria-label="Inicio de sesión corporativo">
+    <div class="auth-card">
+      <div class="auth-brand-panel">
+        <img src="icons/logo.webp" alt="Provexpress" class="auth-brand-logo" width="220" height="58">
+        <span class="auth-chip">PROVEX INVENTARIO SUITE</span>
+        <h2>Plataforma de Control de Inventario & Métricas en Tiempo Real</h2>
+        <p>Gestiona stock diario, valida variaciones, visualiza indicadores ejecutivos y envía reportes corporativos en tiempo real.</p>
+        <div class="auth-feature-row">
+          <span class="auth-feature-dot"></span>
+          Sincronización directa con Excel OneDrive y Microsoft Graph API.
+        </div>
+        <div class="auth-feature-row">
+          <span class="auth-feature-dot purple"></span>
+          Acceso seguro para usuarios autorizados de Provexpress SAS.
+        </div>
+      </div>
+
+      <div class="auth-action-panel">
+        <img src="icons/icono-provexpress.png" alt="Provexpress Icon" class="auth-logo" width="76" height="76">
+        <p class="auth-eyebrow">Acceso Corporativo</p>
+        <h1 class="auth-title">Ingresar a Provex Inventario</h1>
+        <p class="auth-copy">Usa tu cuenta corporativa de Microsoft 365 para acceder a las métricas y gestión de inventario.</p>
+        
+        <button type="button" id="authConnectBtn" class="auth-button">
+          <span class="auth-button-icon">M365</span>
+          <span>Continuar con Microsoft 365</span>
+        </button>
+        
+        <p class="auth-note">Solo personal autorizado por Provexpress SAS.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP SHELL -->
+  <div id="appShell" class="app-locked">
+    
+    <!-- NAVIGATION BAR -->
+    <nav class="app-nav">
+      <div class="nav-container">
+        <div class="brand-wrapper">
+          <img src="icons/logo.webp" alt="Provexpress" class="nav-logo">
+          <span class="nav-badge">Inventario & Métricas</span>
+        </div>
+        
+        <div class="nav-user-panel">
+          <div id="authUser" class="user-info" hidden></div>
+          <button type="button" id="authLogoutBtn" class="btn-logout" hidden>
+            <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- TAB NAVIGATION BAR -->
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="dashboard">
+        <i class="fa-solid fa-chart-pie"></i> Dashboard Ejecutivo
+      </button>
+      <button class="tab-btn" data-tab="manager">
+        <i class="fa-solid fa-boxes-stacked"></i> Gestor & Validador de Inventario
+      </button>
+      <button class="tab-btn" data-tab="email">
+        <i class="fa-solid fa-paper-plane"></i> Generador de Correo Corporativo
+      </button>
+    </div>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="main-content">
+
+      <!-- TAB 1: EXECUTIVE DASHBOARD -->
+      <section id="tab-dashboard" class="tab-page">
+        <!-- KPI METRICS GRID -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-label">Stock Total de Unidades</span>
+              <div class="kpi-icon blue"><i class="fa-solid fa-box"></i></div>
+            </div>
+            <div id="kpiTotalUnits" class="kpi-value">0</div>
+            <div class="kpi-subtext"><i class="fa-solid fa-arrow-up"></i> Actualizado hoy</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-label">Valor Total del Inventario</span>
+              <div class="kpi-icon green"><i class="fa-solid fa-sack-dollar"></i></div>
+            </div>
+            <div id="kpiTotalValue" class="kpi-value">$ 0</div>
+            <div class="kpi-subtext"><i class="fa-solid fa-shield-halved"></i> Valorado en $ COP</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-label">Categorías Activas</span>
+              <div class="kpi-icon purple"><i class="fa-solid fa-tags"></i></div>
+            </div>
+            <div id="kpiCategories" class="kpi-value">0</div>
+            <div class="kpi-subtext">Portátiles, Desktops, Monitores, etc.</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-label">TRM Promedio de Ingreso</span>
+              <div class="kpi-icon amber"><i class="fa-solid fa-dollar-sign"></i></div>
+            </div>
+            <div id="kpiAvgTrm" class="kpi-value">$ 3.950</div>
+            <div class="kpi-subtext">Histórico TRM República de Colombia</div>
+          </div>
+        </div>
+
+        <!-- CHARTS GRID -->
+        <div class="charts-grid">
+          <div class="chart-card">
+            <h3 class="chart-title"><i class="fa-solid fa-chart-line"></i> Tendencia Diaria de Inventario (Día 1 al 31)</h3>
+            <canvas id="trendChart" height="140"></canvas>
+          </div>
+
+          <div class="chart-card">
+            <h3 class="chart-title"><i class="fa-solid fa-chart-pie"></i> Distribución por Categorías</h3>
+            <canvas id="categoryChart" height="200"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: INVENTORY MANAGER & VALIDATOR -->
+      <section id="tab-manager" class="tab-page" hidden>
+        <div class="table-card">
+          <!-- SEARCH & FILTERS CONTROL BAR -->
+          <div class="table-controls">
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <input type="text" id="searchInput" class="search-input" placeholder="Buscar por N/P, Nombre de Producto o Especificaciones...">
+            </div>
+
+            <div class="filter-group">
+              <select id="sectionFilter" class="select-filter">
+                <option value="">Todas las Secciones</option>
+                <option value="EQUIPOS PARA RENTA">EQUIPOS PARA RENTA</option>
+                <option value="HP">HP</option>
+                <option value="LENOVO">LENOVO</option>
+                <option value="DELL">DELL</option>
+                <option value="MONITORES">MONITORES</option>
+                <option value="IMPRESORAS">IMPRESORAS</option>
+                <option value="CELULARES">CELULARES</option>
+                <option value="ACCESORIOS Y PERIFÉRICOS">ACCESORIOS Y PERIFÉRICOS</option>
+              </select>
+
+              <select id="brandFilter" class="select-filter">
+                <option value="">Todas las Marcas</option>
+                <option value="HP">HP</option>
+                <option value="LENOVO">LENOVO</option>
+                <option value="DELL">DELL</option>
+                <option value="SAMSUNG">SAMSUNG</option>
+                <option value="LOGITECH">LOGITECH</option>
+                <option value="KYOCERA">KYOCERA</option>
+                <option value="MOTOROLA">MOTOROLA</option>
+                <option value="ADATA">ADATA</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- RESPONSIVE TABLE -->
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th style="width: 40px; text-align: center;">N°</th>
+                  <th>Sección</th>
+                  <th>Categoría</th>
+                  <th style="text-align: center;">Marca</th>
+                  <th>N/P</th>
+                  <th>Producto / Descripción</th>
+                  <th style="text-align: right;">Costo (COP)</th>
+                  <th style="text-align: center;">IVA</th>
+                  <th style="text-align: center;">Ingreso</th>
+                  <th style="text-align: center; width: 140px;">Unidades (HOY)</th>
+                  <th style="text-align: right;">Valor Stock</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+                <!-- Rows dynamically injected by app.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: EMAIL GENERATOR & SENDER -->
+      <section id="tab-email" class="tab-page" hidden>
+        <div class="table-card" style="padding: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 16px;">
+            <div>
+              <h2 style="font-size: 20px; font-weight: 800; color: var(--corp-navy); margin-bottom: 4px;">
+                <i class="fa-solid fa-envelope-open-text"></i> Previsualizador del Correo Corporativo
+              </h2>
+              <p style="font-size: 13px; color: var(--text-muted);">
+                Verifica la maqueta oficial HTML generada para <b>especialista.preventa@provexpress.com.co</b>
+              </p>
+            </div>
+
+            <button type="button" id="btnSendEmail" class="btn-success">
+              <i class="fa-solid fa-paper-plane"></i> Confirmar, Enviar Correo y Actualizar Excel
+            </button>
+          </div>
+
+          <!-- HTML PREVIEW BOX -->
+          <div id="emailPreviewContainer" class="email-preview-box">
+            <!-- Rendered by app.js -->
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- App Script -->
+  <script src="js/app.js"></script>
+</body>
+</html>
