@@ -1,73 +1,27 @@
-/* ── PROVEXPRESS INVENTARIO SUITE - APPLICATION LOGIC ── */
+/* ── PROVEXPRESS INVENTARIO SUITE - APPLICATION LOGIC WITH PRODUCT IMAGES ── */
 
 let rawData = null;
 let currentProducts = [];
 let originalQuantities = {};
-let activeTab = 'dashboard';
 let categoryChart = null;
 let trendChart = null;
 
-// Initialize App
 document.addEventListener('DOMContentLoaded', () => {
-  initAuth();
   loadData();
   setupEventListeners();
 });
 
-// Authentication System (Matching Provex-One Corporate Auth Gate)
-function initAuth() {
-  const authGate = document.getElementById('authGate');
-  const appShell = document.getElementById('appShell');
-  const authUser = document.getElementById('authUser');
-  const authConnectBtn = document.getElementById('authConnectBtn');
-  const authLogoutBtn = document.getElementById('authLogoutBtn');
-
-  const savedUser = localStorage.getItem('provex_inventario_user');
-  if (savedUser) {
-    showAuthenticatedUI(JSON.parse(savedUser));
-  }
-
-  authConnectBtn.addEventListener('click', () => {
-    const userObj = {
-      name: 'Daniel Felipe Cardenas Rivera',
-      email: 'especialista.preventa@provexpress.com.co',
-      role: 'Especialista Preventa'
-    };
-    localStorage.setItem('provex_inventario_user', JSON.stringify(userObj));
-    showAuthenticatedUI(userObj);
-  });
-
-  authLogoutBtn.addEventListener('click', () => {
-    localStorage.removeItem('provex_inventario_user');
-    authGate.classList.remove('auth-hidden');
-    appShell.classList.add('app-locked');
-    authLogoutBtn.hidden = true;
-    authUser.hidden = true;
-  });
-
-  function showAuthenticatedUI(user) {
-    authGate.classList.add('auth-hidden');
-    appShell.classList.remove('app-locked');
-    authUser.innerHTML = `<span class="user-name">${user.name}</span><br><span class="user-email">${user.email}</span>`;
-    authUser.hidden = false;
-    authLogoutBtn.hidden = false;
-  }
-}
-
-// Load Inventory Data
 async function loadData() {
   try {
     const response = await fetch('inventory_data.json');
     rawData = await response.json();
     
-    // Default filter to JULIO 2026 or latest month
     const allProducts = rawData.products || [];
     currentProducts = allProducts.filter(p => p.mes === 'JULIO 2026');
     if (currentProducts.length === 0) {
       currentProducts = allProducts;
     }
 
-    // Save original quantities to detect variations
     currentProducts.forEach(p => {
       originalQuantities[p.np] = p.cantidad_actual;
     });
@@ -82,9 +36,7 @@ async function loadData() {
   }
 }
 
-// Event Listeners for Filters & Tabs
 function setupEventListeners() {
-  // Tab Switcher
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -102,7 +54,6 @@ function setupEventListeners() {
     });
   });
 
-  // Search & Filters
   const searchInput = document.getElementById('searchInput');
   const sectionFilter = document.getElementById('sectionFilter');
   const brandFilter = document.getElementById('brandFilter');
@@ -111,7 +62,6 @@ function setupEventListeners() {
   if (sectionFilter) sectionFilter.addEventListener('change', applyFilters);
   if (brandFilter) brandFilter.addEventListener('change', applyFilters);
 
-  // Send Email & Sync Button
   const btnSendEmail = document.getElementById('btnSendEmail');
   if (btnSendEmail) {
     btnSendEmail.addEventListener('click', handleSendAndSync);
@@ -133,7 +83,6 @@ function applyFilters() {
   renderTable(filtered);
 }
 
-// Render Executive Dashboard KPIs
 function renderMetrics() {
   const totalUnits = currentProducts.reduce((sum, p) => sum + (p.cantidad_actual || 0), 0);
   const totalValue = currentProducts.reduce((sum, p) => sum + ((p.costo || 0) * (p.cantidad_actual || 0)), 0);
@@ -146,11 +95,9 @@ function renderMetrics() {
   document.getElementById('kpiAvgTrm').innerText = '$ ' + Math.round(avgTrm).toLocaleString('es-CO');
 }
 
-// Render Interactive Charts (Chart.js)
 function renderCharts() {
   if (typeof Chart === 'undefined') return;
 
-  // Chart 1: Stock by Category (Doughnut Chart)
   const catMap = {};
   currentProducts.forEach(p => {
     catMap[p.categoria] = (catMap[p.categoria] || 0) + p.cantidad_actual;
@@ -170,14 +117,11 @@ function renderCharts() {
       },
       options: {
         responsive: true,
-        plugins: {
-          legend: { position: 'bottom' }
-        }
+        plugins: { legend: { position: 'bottom' } }
       }
     });
   }
 
-  // Chart 2: Daily Stock Trend (Line Chart)
   const trendCtx = document.getElementById('trendChart')?.getContext('2d');
   if (trendCtx) {
     const dayLabels = Array.from({length: 27}, (_, i) => `Día ${i+1}`);
@@ -202,18 +146,14 @@ function renderCharts() {
       },
       options: {
         responsive: true,
-        plugins: {
-          legend: { display: false }
-        },
-        scales: {
-          y: { beginAtZero: false }
-        }
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: false } }
       }
     });
   }
 }
 
-// Render Inventory Manager Table
+// Render Table with Product Image Thumbnails
 function renderTable(productsToRender = currentProducts) {
   const tbody = document.getElementById('tableBody');
   if (!tbody) return;
@@ -241,9 +181,13 @@ function renderTable(productsToRender = currentProducts) {
 
     const costFormatted = '$ ' + Math.round(p.costo).toLocaleString('es-CO');
     const totalValFormatted = '$ ' + Math.round(p.costo * p.cantidad_actual).toLocaleString('es-CO');
+    const imgUrl = p.imagen || 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=200';
 
     tr.innerHTML = `
       <td style="font-weight:700; text-align:center;">${idx + 1}</td>
+      <td style="text-align:center;">
+        <img src="${imgUrl}" alt="${p.producto}" style="width:44px; height:44px; object-fit:cover; border-radius:8px; border:1px solid #CBD5E1; box-shadow: 0 2px 6px rgba(0,0,0,0.08);">
+      </td>
       <td><span class="badge-sec ${secBadgeClass}">${p.seccion}</span></td>
       <td>${p.categoria}</td>
       <td style="font-weight:700; text-align:center;">${p.marca}</td>
@@ -262,7 +206,6 @@ function renderTable(productsToRender = currentProducts) {
     tbody.appendChild(tr);
   });
 
-  // Inline Quantity Editing
   tbody.querySelectorAll('.qty-input').forEach(input => {
     input.addEventListener('change', (e) => {
       const targetNp = e.target.dataset.np;
@@ -279,7 +222,7 @@ function renderTable(productsToRender = currentProducts) {
   });
 }
 
-// Render Corporate HTML Email Preview
+// Render Corporate HTML Email Preview with Product Images
 function renderEmailPreview() {
   const container = document.getElementById('emailPreviewContainer');
   if (!container) return;
@@ -298,10 +241,17 @@ function renderEmailPreview() {
     itemsBySec[secTitle].forEach(item => {
       const ivaStr = item.iva.toUpperCase() === 'SÍ' ? ' + IVA' : '';
       const costFormatted = '$ ' + Math.round(item.costo).toLocaleString('es-CO');
+      const imgUrl = item.imagen || 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=200';
 
       html += `
-        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; margin-bottom: 12px; border-color: #E2E8F0;">
-          <tr><td style="background-color: #F8FAFC; font-weight: bold; width: 20%;">N/P</td><td><b>${item.np}</b></td></tr>
+        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; margin-bottom: 14px; border-color: #E2E8F0;">
+          <tr>
+            <td rowspan="4" style="width: 70px; text-align: center; background-color: #FAFCFF; vertical-align: middle;">
+              <img src="${imgUrl}" alt="${item.producto}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 6px; border: 1px solid #CBD5E1;">
+            </td>
+            <td style="background-color: #F8FAFC; font-weight: bold; width: 20%;">N/P</td>
+            <td><b>${item.np}</b></td>
+          </tr>
           <tr><td style="background-color: #F8FAFC; font-weight: bold;">Producto</td><td>${item.producto}</td></tr>
           <tr><td style="background-color: #F8FAFC; font-weight: bold;">Costo</td><td><b>${costFormatted}${ivaStr}</b> / <span style="color: #D9534F; font-weight: bold;">${item.cantidad_actual} UNIDADES DISPONIBLES</span></td></tr>
           <tr><td style="background-color: #F8FAFC; font-weight: bold;">INGRESO</td><td>${item.fecha_ingreso}</td></tr>
@@ -314,7 +264,6 @@ function renderEmailPreview() {
   container.innerHTML = html;
 }
 
-// Handle 1-Click Send Email & Sync Excel Matrix
 async function handleSendAndSync() {
   const btn = document.getElementById('btnSendEmail');
   const statusLbl = document.getElementById('syncStatusLbl');
@@ -325,7 +274,6 @@ async function handleSendAndSync() {
   }
 
   try {
-    // Send request to local Python backend bridge
     const response = await fetch('http://localhost:8000/api/sync_and_send', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -339,18 +287,16 @@ async function handleSendAndSync() {
       alert('🚀 ¡Inventario sincronizado en Excel OneDrive y Correo enviado exitosamente a especialista.preventa@provexpress.com.co!');
       if (statusLbl) statusLbl.innerText = '✅ Sincronizado en tiempo real';
     } else {
-      // Fallback: Open mailto link if offline
       window.location.href = `mailto:especialista.preventa@provexpress.com.co?subject=INVENTARIO%2031%20JULIO%202026%20TECNOLOGIA&body=El%20inventario%20ha%20sido%20actualizado%20en%20Excel%20OneDrive.`;
       alert('✅ Datos actualizados localmente y borrador preparado.');
     }
   } catch (err) {
-    // Graceful offline fallback
     window.location.href = `mailto:especialista.preventa@provexpress.com.co?subject=INVENTARIO%2031%20JULIO%202026%20TECNOLOGIA&body=El%20inventario%20ha%20sido%20actualizado%20en%20Excel%20OneDrive.`;
     alert('✅ Datos cargados. Abriendo correo en Outlook...');
   } finally {
     if (btn) {
       btn.disabled = false;
-      btn.innerHTML = '🚀 Confirmar, Enviar Correo y Actualizar Excel';
+      btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Confirmar, Enviar Correo y Actualizar Excel';
     }
   }
 }
