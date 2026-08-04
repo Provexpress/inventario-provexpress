@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-08-04T11:30:00",
+  "last_updated": "2026-08-04T11:45:00",
   "excel_path": "C:\\Users\\especialista.prevent\\OneDrive - PROVEXPRESS SAS\\Excels Invetario\\plantilla_inventario_matriz.xlsx",
-  "total_products": 186,
+  "total_products": 177,
   "products": [
     {
       "id": 1,
@@ -4348,832 +4348,670 @@
       "imagen": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&auto=format&fit=crop&q=80"
     },
     {
-      "id": 141,
-      "mes": "AGOSTO 2026",
       "seccion": "EQUIPOS PARA RENTA",
       "categoria": "EQUIPOS PARA RENTA",
       "marca": "DELL",
       "np": "6DWCJ",
-      "producto": "portatil dell pro 14 / Procesador: Intel® Core™ i5 / Memoria: 8GB / Disco Duro: 512 / Sistema Operativo: Win 11 pro / Pantalla: 14” / Garantía : 1 año",
-      "costo": 14653730.0,
+      "producto": "portatil dell pro 14 / Procesador: Intel® Core™ i5 / Memoria: 8GB/ Disco Duro: 512 / Sistema Operativo: Win 11 pro / Pantalla: 14” / Garantía: 1 año",
+      "costo": 146537.3,
       "iva": "No",
-      "fecha_ingreso": "2025-12-18 00:00:00",
-      "trm_ingreso": 4150.0,
+      "fecha_ingreso": "18/12/25",
       "cantidad_actual": 195,
+      "id": 141,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
       "dias_stock": {
         "day_4": 195
       },
       "imagen": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&auto=format&fit=crop&q=80"
     },
     {
-      "id": 142,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "PORTÁTILES",
-      "marca": "APPLE",
-      "np": "MC654E/A",
-      "producto": "MacBook Air Apple M4 , CPU de 10 núcleos (4 de rendimiento + 6 de eficiencia / Memoria: 24 GB de memoria unificada/ Disco Duro: 512 GB SSD &#61623; 13.6 pulgadas Garantía: 1 año",
-      "costo": 580080840.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-02-24 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 3,
-      "dias_stock": {
-        "day_4": 3
-      },
-      "imagen": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 143,
-      "mes": "AGOSTO 2026",
       "seccion": "HP",
       "categoria": "PORTÁTILES",
       "marca": "HP",
       "np": "D66V1LT-512",
-      "producto": "portatil hp ULTRA pro book 4 / Procesador: Core™ Ultra 7 / Memoria: 16gb / Disco Duro: 512ssd / Sistema Operativo: Win 11 / Pantalla: 14” / Garantía: 1 año",
+      "producto": "portatil hp ULTRA pro book 4 / Procesador: Core™ Ultra 7 / Memoria: 16gb / Disco Duro: 512ssd / Sistema Operativo: Win 11 / Pantalla: 14” /",
       "costo": 361200000.0,
       "iva": "Sí",
-      "fecha_ingreso": "2026-04-16 00:00:00",
-      "trm_ingreso": 3920.5,
-      "cantidad_actual": 20,
+      "fecha_ingreso": "16/04/26",
+      "cantidad_actual": 122,
+      "id": 142,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
       "dias_stock": {
-        "day_4": 20
+        "day_4": 122
       },
       "imagen": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500&auto=format&fit=crop&q=80"
     },
     {
-      "id": 144,
-      "mes": "AGOSTO 2026",
       "seccion": "HP",
       "categoria": "PORTÁTILES",
       "marca": "HP",
       "np": "D66V1LT-1TB",
-      "producto": "portatil hp ULTRA pro book 4 / Procesador: Core™ Ultra 7 / Memoria: 16gb / Disco Duro: 1tb / Sistema Operativo: Win 11 / Pantalla: 14” / Garantía: 1 año",
+      "producto": "portatil hp ULTRA  pro book 4 / Procesador: Core™ Ultra 7 / Memoria: 16gb / Disco Duro: 1tb / Sistema Operativo: Win 11 / Pantalla: 14” /",
       "costo": 384000000.0,
       "iva": "Sí",
-      "fecha_ingreso": "2026-04-16 00:00:00",
-      "trm_ingreso": 3920.5,
-      "cantidad_actual": 13,
+      "fecha_ingreso": "16/04/26",
+      "cantidad_actual": 12,
+      "id": 143,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
       "dias_stock": {
-        "day_4": 13
+        "day_4": 12
       },
       "imagen": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500&auto=format&fit=crop&q=80"
     },
     {
-      "id": 145,
-      "mes": "AGOSTO 2026",
       "seccion": "HP",
       "categoria": "PORTÁTILES",
       "marca": "HP",
       "np": "D66VZLT",
-      "producto": "portatil hp ULTRA pro book 4 / Procesador: Core™ Ultra 5 225U / Memoria: 16gb DDR5 / Disco Duro: 512 / Sistema Operativo: Win 11 / Pantalla: 14” / Garantía: 1 año",
-      "costo": 325000000.0,
+      "producto": "portatil hp ULTRA pro book 4  / Procesador: Core™ Ultra 5 225U / Memoria: 16gb DDR5 / Disco Duro: 512 / Sistema Operativo: Win 11 / Pantalla: 14” /",
+      "costo": 330000000.0,
       "iva": "Sí",
-      "fecha_ingreso": "2026-06-01 00:00:00",
+      "fecha_ingreso": "03/07/26",
+      "cantidad_actual": 8,
+      "id": 144,
+      "mes": "AGOSTO 2026",
       "trm_ingreso": 3950.0,
-      "cantidad_actual": 28,
       "dias_stock": {
-        "day_4": 28
+        "day_4": 8
       },
       "imagen": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500&auto=format&fit=crop&q=80"
     },
     {
-      "id": 146,
-      "mes": "AGOSTO 2026",
       "seccion": "LENOVO",
       "categoria": "PORTÁTILES",
       "marca": "LENOVO",
       "np": "21SY0015LM",
-      "producto": "Portatil Lenovo ThinkPad E14 G7 255H / Procesador: Intel® ULTRA 7 / Memoria: 16GB ddr5 / Disco Duro: 512 / Sistema Operativo : Win 11 pro / Pantalla: 14” / Garantia 3 años",
-      "costo": 440000002.0,
+      "producto": "Portatil Lenovo ThinkPad E14 G7 255H / Procesador: Intel® ULTRA 7 / Memoria: 16GB ddr5 / Disco Duro: 512/ Sistema Operativo: Win 11 pro / Pantalla: 14” / Garantia 3 años",
+      "costo": 432059708.0,
       "iva": "Sí",
-      "fecha_ingreso": "2026-05-27 00:00:00",
-      "trm_ingreso": 3875.2,
-      "cantidad_actual": 168,
+      "fecha_ingreso": "23/07/26",
+      "cantidad_actual": 222,
+      "id": 145,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
       "dias_stock": {
-        "day_4": 168
+        "day_4": 222
       },
       "imagen": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=500&auto=format&fit=crop&q=80"
     },
     {
-      "id": 147,
-      "mes": "AGOSTO 2026",
-      "seccion": "LENOVO",
-      "categoria": "PORTÁTILES",
-      "marca": "LENOVO",
-      "np": "21SY000ALM",
-      "producto": "Portatil Lenovo ThinkPad ultra E14 G7 / 255h Procesador: Intel® ULTRA 7 / Memoria: 16GB / Disco Duro: 512 / Sistema Operativo : Win 11 pro / Pantalla: 14” / Garantia 3 años premier suport",
-      "costo": 460000000.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-05-07 00:00:00",
-      "trm_ingreso": 3890.0,
-      "cantidad_actual": 1,
-      "dias_stock": {
-        "day_4": 1
-      },
-      "imagen": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 148,
-      "mes": "AGOSTO 2026",
       "seccion": "LENOVO",
       "categoria": "PORTÁTILES",
       "marca": "LENOVO",
       "np": "21SY0016LM",
-      "producto": "Portatil Lenovo ThinkPad ultra E14 G6 Procesador: Intel® ULTRA 7 / Memoria: 16GB / Disco Duro: 1TB / Sistema Operativo : Win 11 pro / Pantalla: 14” / Garantia 3 años premier suport",
+      "producto": "Portatil Lenovo ThinkPad ultra E14 G6 Procesador: Intel® ULTRA 7 / Memoria: 16GB/ Disco Duro: 1TB/ Sistema Operativo: Win 11 pro / Pantalla: 14” / Garantia 3 años premier suport",
       "costo": 460000003.0,
       "iva": "Sí",
-      "fecha_ingreso": "2026-06-05 00:00:00",
-      "trm_ingreso": 3910.0,
-      "cantidad_actual": 22,
+      "fecha_ingreso": "05/06/26",
+      "cantidad_actual": 16,
+      "id": 146,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
       "dias_stock": {
-        "day_4": 22
+        "day_4": 16
       },
       "imagen": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=500&auto=format&fit=crop&q=80"
     },
     {
-      "id": 149,
-      "mes": "AGOSTO 2026",
       "seccion": "LENOVO",
       "categoria": "PORTÁTILES",
       "marca": "LENOVO",
       "np": "21SY0013LM",
-      "producto": "Portatil Lenovo ThinkPad E14 G7/225u Procesador: Intel® ULTRA 5 / Memoria: 16GB / Disco Duro: 512 / Sistema Operativo : Win 11 pro / Pantalla: 14” / Garantía 3 años Premier Suppor",
-      "costo": 356397581.0,
+      "producto": "Portatil Lenovo ThinkPad E14 G7/225u Procesador: Intel® ULTRA 5 / Memoria: 16GB / Disco Duro: 512 / Sistema Operativo: Win 11 pro / Pantalla: 14” / Garantía 3 años Premier Suppor",
+      "costo": 336446948.0,
       "iva": "Sí",
-      "fecha_ingreso": "2026-06-22 00:00:00",
+      "fecha_ingreso": "03/07/26",
+      "cantidad_actual": 242,
+      "id": 147,
+      "mes": "AGOSTO 2026",
       "trm_ingreso": 3950.0,
-      "cantidad_actual": 118,
       "dias_stock": {
-        "day_4": 118
+        "day_4": 242
       },
       "imagen": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=500&auto=format&fit=crop&q=80"
     },
     {
-      "id": 150,
+      "seccion": "LENOVO",
+      "categoria": "ALMACENAMIENTO / SSD",
+      "marca": "LENOVO",
+      "np": "13DG000NLS",
+      "producto": "PC THINKCENTER GEN 5 / Procesador: Intel® i5 / Memoria: 16GB / Disco Duro: 512 / Sistema Operativo: Win 11 pro-64 / / Garantía 3 años",
+      "costo": 230294549.0,
+      "iva": "Sí",
+      "fecha_ingreso": "29/05/26",
+      "cantidad_actual": 3,
+      "id": 148,
       "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 3
+      },
+      "imagen": "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "LENOVO",
+      "categoria": "ALMACENAMIENTO / SSD",
+      "marca": "LENOVO",
+      "np": "30FS000YLM",
+      "producto": "WS lenovo thinkstation / Procesador: Intel® i9 / Memoria: 16GB / Disco Duro: 1tb / Sistema Operativo: Win 11 pro / / Garantía 3 años",
+      "costo": 759171000.0,
+      "iva": "Sí",
+      "fecha_ingreso": "24/04/26",
+      "cantidad_actual": 1,
+      "id": 149,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 1
+      },
+      "imagen": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=500&auto=format&fit=crop&q=80"
+    },
+    {
       "seccion": "DELL",
       "categoria": "PORTÁTILES",
       "marca": "DELL",
       "np": "2HWN3",
-      "producto": "portatil dell pro / Procesador: Intel® ultra 7/ Memoria: 16GB / Disco Duro: 512 / Sistema Operativo: Win 11 pro / Pantalla: 14” / Garantía : 3 Year Hardware Service With OnSite SNS-LA",
-      "costo": 357930857.0,
+      "producto": "portatil dell pro / Procesador: Intel® ultra 7/ Memoria: 16GB/ Disco Duro: 512 / Sistema Operativo: Win 11 pro / Pantalla: 14” / Garantía: 3 Year Hardware Service With OnSite SNS-LA",
+      "costo": 379000000.0,
       "iva": "Sí",
-      "fecha_ingreso": "2026-04-20 00:00:00",
+      "fecha_ingreso": "06/07/26",
+      "cantidad_actual": 99,
+      "id": 150,
+      "mes": "AGOSTO 2026",
       "trm_ingreso": 3950.0,
-      "cantidad_actual": 15,
       "dias_stock": {
-        "day_4": 15
+        "day_4": 99
       },
       "imagen": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&auto=format&fit=crop&q=80"
     },
     {
-      "id": 151,
-      "mes": "AGOSTO 2026",
       "seccion": "DELL",
       "categoria": "PORTÁTILES",
       "marca": "DELL",
       "np": "7XNFP",
-      "producto": "portatil dell pro 14 pci 14250 / Procesador: Intel® ULTRA 5 / Memoria: 16GB / Disco Duro: 512 / Sistema Operativo: Win 11 pro / Pantalla: 14” / Garantía : 1 año",
-      "costo": 255000000.0,
+      "producto": "portatil dell pro 14 pci 14250 / Procesador: Intel® ULTRA 5 / Memoria: 16GB/ Disco Duro: 512 / Sistema Operativo: Win 11 pro / Pantalla: 14” / Garantía: 1 año",
+      "costo": 254665411.0,
       "iva": "No",
-      "fecha_ingreso": "2026-04-14 00:00:00",
+      "fecha_ingreso": "16/07/26",
+      "cantidad_actual": 9,
+      "id": 151,
+      "mes": "AGOSTO 2026",
       "trm_ingreso": 3950.0,
-      "cantidad_actual": 80,
       "dias_stock": {
-        "day_4": 80
+        "day_4": 9
       },
       "imagen": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&auto=format&fit=crop&q=80"
     },
     {
+      "seccion": "DELL",
+      "categoria": "PORTÁTILES",
+      "marca": "DELL",
+      "np": "6DWCJ",
+      "producto": "portatil dell pro 14 / Procesador: Intel® Core™ i5 / Memoria: 8GB/ Disco Duro: 512 / Sistema Operativo: Win 11 pro / Pantalla: 14” / Garantía: 1 año",
+      "costo": 227622687.0,
+      "iva": "No",
+      "fecha_ingreso": "26/03/26",
+      "cantidad_actual": 195,
       "id": 152,
       "mes": "AGOSTO 2026",
-      "seccion": "DELL",
-      "categoria": "PORTÁTILES",
-      "marca": "DELL",
-      "np": "19T84",
-      "producto": "portatil dell pro / Procesador: Intel® ULTRA 5 / Memoria: 16GB / Disco Duro: 512 / Sistema Operativo: Win 11 pro / Pantalla: 14” / Garantía : 3 añoS",
-      "costo": 311009974.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-03-09 00:00:00",
       "trm_ingreso": 3950.0,
-      "cantidad_actual": 1,
       "dias_stock": {
-        "day_4": 1
+        "day_4": 195
       },
       "imagen": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&auto=format&fit=crop&q=80"
     },
     {
+      "seccion": "DELL",
+      "categoria": "PORTÁTILES",
+      "marca": "DELL",
+      "np": "6DWCJ-16",
+      "producto": "portatil dell pro 14 / Procesador: Intel® Core™ i5 / Memoria: 16GB/ Disco Duro: 512 / Sistema Operativo: Win 11 pro / Pantalla: 14” / Garantía: 1 año",
+      "costo": 237600000.0,
+      "iva": "No",
+      "fecha_ingreso": "26/03/26",
+      "cantidad_actual": 20,
       "id": 153,
       "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 20
+      },
+      "imagen": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&auto=format&fit=crop&q=80"
+    },
+    {
       "seccion": "DELL",
-      "categoria": "DESKTOPS / PCS",
+      "categoria": "MONITORES",
       "marca": "DELL",
-      "np": "210-BPSQ",
-      "producto": "Dell PRO-MAX Torre T2 / Procesador: Intel® Core™ U7 / Memoria: 32GB / Disco Duro: 512 / Sistema Operativo: Win 11 pro / Pantalla: 14” / Garantía : 1 año",
-      "costo": 780428600.0,
-      "iva": "No",
-      "fecha_ingreso": "2026-03-19 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 16,
-      "dias_stock": {
-        "day_4": 16
-      },
-      "imagen": "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 154,
-      "mes": "AGOSTO 2026",
-      "seccion": "MONITORES",
-      "categoria": "MONITORES",
-      "marca": "SAMSUNG",
-      "np": "LS24F330EANXZA",
-      "producto": "Monitor Samsung 24\" S3 Essential full hd 100hz”",
-      "costo": 24927978.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-05-26 00:00:00",
-      "trm_ingreso": 3880.0,
-      "cantidad_actual": 13,
-      "dias_stock": {
-        "day_4": 13
-      },
-      "imagen": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 155,
-      "mes": "AGOSTO 2026",
-      "seccion": "MONITORES",
-      "categoria": "MONITORES",
-      "marca": "SAMSUNG",
-      "np": "LS22F310EANXZA",
-      "producto": "Monitor Samsung 22\" S3 Essential full hd 100hz”",
-      "costo": 21000000.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-05-22 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 8,
-      "dias_stock": {
-        "day_4": 8
-      },
-      "imagen": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 156,
-      "mes": "AGOSTO 2026",
-      "seccion": "CELULARES",
-      "categoria": "CELULARES / MÓVILES",
-      "marca": "MOTOROLA",
-      "np": "PB6D0076CO",
-      "producto": "Celular Moto G15 4GB/512GB Azul",
-      "costo": 48000000.0,
-      "iva": "No",
-      "fecha_ingreso": "2026-03-27 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 3,
-      "dias_stock": {
-        "day_4": 3
-      },
-      "imagen": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 157,
-      "mes": "AGOSTO 2026",
-      "seccion": "IMPRESORAS",
-      "categoria": "IMPRESORAS",
-      "marca": "KYOCERA",
-      "np": "MA4000X/L",
-      "producto": "Impresora Multifuncional Kyocera 3 en 1 44ppm",
-      "costo": 149945000.0,
-      "iva": "No",
-      "fecha_ingreso": "2026-03-27 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 1,
-      "dias_stock": {
-        "day_4": 1
-      },
-      "imagen": "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 158,
-      "mes": "AGOSTO 2026",
-      "seccion": "IMPRESORAS",
-      "categoria": "IMPRESORAS",
-      "marca": "KYOCERA",
-      "np": "MA4000WIFX/L",
-      "producto": "Impresora Mfp Kyosera Ma 4000 4000 42ppm",
-      "costo": 239042700.0,
-      "iva": "No",
-      "fecha_ingreso": "2026-03-27 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 1,
-      "dias_stock": {
-        "day_4": 1
-      },
-      "imagen": "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 159,
-      "mes": "AGOSTO 2026",
-      "seccion": "IMPRESORAS",
-      "categoria": "IMPRESORAS",
-      "marca": "KYOCERA",
-      "np": "MA4500IX",
-      "producto": "Impresora Multifuncional Kyocera ecosys",
-      "costo": 341903500.0,
-      "iva": "No",
-      "fecha_ingreso": "2026-03-27 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 12,
-      "dias_stock": {
-        "day_4": 12
-      },
-      "imagen": "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 160,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "ALMACENAMIENTO / SSD",
-      "marca": "ADATA",
-      "np": "ALEG-800-1000GC",
-      "producto": "Disco Ssd M.2 Gen 4x4 Legend 800 Garantía: 1 año",
-      "costo": 36110986.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-02-26 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 87,
-      "dias_stock": {
-        "day_4": 87
-      },
-      "imagen": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 161,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "DESKTOPS / PCS",
-      "marca": "OTRAS",
-      "np": "SSD-PEL-1243",
-      "producto": "Disco Ssd Pci M.2 1tb 2230 Nvme",
-      "costo": 50201844.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-02-24 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 2,
-      "dias_stock": {
-        "day_4": 2
-      },
-      "imagen": "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 162,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "DIADEMAS / AUDIO",
-      "marca": "LOGITECH",
-      "np": "981-000014",
-      "producto": "Diadema Logitech H390 Confort alámbrica. Micrófono con supresión de ruido: Reduce el molesto ruido del fondo, Diadema ajustable. Conexión: USB – Cable Garantía: 1 año.",
-      "costo": 5751199.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-05-25 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 150,
-      "dias_stock": {
-        "day_4": 150
-      },
-      "imagen": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 163,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "DIADEMAS / AUDIO",
-      "marca": "POLY / PLANTRONICS",
-      "np": "8X228A6",
-      "producto": "Auricular estéreo USB-C Blackwire 3220 Conexión: USB-C (conector)A Garantía: 2 años",
-      "costo": 7623214.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-04-27 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 41,
-      "dias_stock": {
-        "day_4": 41
-      },
-      "imagen": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 164,
-      "mes": "AGOSTO 2026",
-      "seccion": "DELL",
-      "categoria": "DIADEMAS / AUDIO",
-      "marca": "DELL",
-      "np": "520-BBLL",
-      "producto": "Auricular Con Cable Dell WH125 Conexión: USB‑A (plug and play) Garantía:",
-      "costo": 6887425.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-03-25 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 53,
-      "dias_stock": {
-        "day_4": 53
-      },
-      "imagen": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 165,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "PERIFÉRICOS / MOUSE & TECLADO",
-      "marca": "LOGITECH",
-      "np": "910-004053",
-      "producto": "Mouse Logitech M90 Alámbrico Negro / Conexión: USB 2.0- Cable / Garantía: 1 año.",
-      "costo": 1300000.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-03-06 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 70,
-      "dias_stock": {
-        "day_4": 70
-      },
-      "imagen": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 166,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "PERIFÉRICOS / MOUSE & TECLADO",
-      "marca": "LOGITECH",
-      "np": "910-002225",
-      "producto": "Mouse Logitech M185 Inalambrico Negro gris / Conexión: Receptor USB Garantía: 1 año.",
-      "costo": 3605895.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2025-09-08 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 39,
-      "dias_stock": {
-        "day_4": 39
-      },
-      "imagen": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 167,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "PERIFÉRICOS / MOUSE & TECLADO",
-      "marca": "LOGITECH",
-      "np": "920-004428",
-      "producto": "Combo Teclado + Mouse Logitech MK120 USB / Conexión: Receptor USB / Garantía: 1 año.",
-      "costo": 3878327.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-06-01 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 175,
-      "dias_stock": {
-        "day_4": 175
-      },
-      "imagen": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 168,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "PERIFÉRICOS / MOUSE & TECLADO",
-      "marca": "LOGITECH",
-      "np": "920-004430",
-      "producto": "Combo Teclado + Mouse Logitech MK220 Inalámbrico / Conexión: Receptor USB / Garantía: 1 año.",
-      "costo": 4896802.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-04-16 00:00:00",
-      "trm_ingreso": 3920.5,
-      "cantidad_actual": 70,
-      "dias_stock": {
-        "day_4": 70
-      },
-      "imagen": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 169,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "PERIFÉRICOS / MOUSE & TECLADO",
-      "marca": "LOGITECH",
-      "np": "920-007901",
-      "producto": "Combo Teclado + Mouse Logitech MK 235 Inalámbrico / Conexión: Receptor USB / Garantía: 1 año.",
-      "costo": 6314497.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-04-09 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 208,
-      "dias_stock": {
-        "day_4": 208
-      },
-      "imagen": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 170,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "PERIFÉRICOS / MOUSE & TECLADO",
-      "marca": "LOGITECH",
-      "np": "920-004432",
-      "producto": "Combo Teclado + Mouse Logitech Mk270 Inalámbrico / Conexión: Receptor USB / Garantía: 1 año.",
-      "costo": 7233182.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-04-08 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 148,
-      "dias_stock": {
-        "day_4": 148
-      },
-      "imagen": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 171,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "PERIFÉRICOS / MOUSE & TECLADO",
-      "marca": "LOGITECH",
-      "np": "920-013513",
-      "producto": "Combo Teclado + Mouse Logitech Mk250 Bluetooth / Conexión: Bluetooth / Garantía: 1 año.",
-      "costo": 8100198.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-04-16 00:00:00",
-      "trm_ingreso": 3920.5,
-      "cantidad_actual": 31,
-      "dias_stock": {
-        "day_4": 31
-      },
-      "imagen": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 172,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "PERIFÉRICOS / MOUSE & TECLADO",
-      "marca": "GENIUS",
-      "np": "KM-160",
-      "producto": "Combo Teclado + Mouse GENIUS alámbrico / Conexión: Receptor USB / Garantía: 1 año.",
-      "costo": 2796321.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-04-10 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 130,
-      "dias_stock": {
-        "day_4": 130
-      },
-      "imagen": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 173,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "PERIFÉRICOS / MOUSE & TECLADO",
-      "marca": "GENIUS",
-      "np": "DX-120",
-      "producto": "Mouse Genius DX-120 Usb alámbrico / Conexión: Receptor USB / Garantía: 1 año.",
-      "costo": 816175.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-05-04 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 122,
-      "dias_stock": {
-        "day_4": 122
-      },
-      "imagen": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 174,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "PORTÁTILES",
-      "marca": "JALTECH",
-      "np": "PA248U5",
-      "producto": "Base Portatil Refrigerante 2 Puertos Jaltech USB / Garantía: 1 año.",
-      "costo": 2432371.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-03-18 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 150,
-      "dias_stock": {
-        "day_4": 150
-      },
-      "imagen": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 175,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "PORTÁTILES",
-      "marca": "OTRAS",
-      "np": "ACC-BXU-0737",
-      "producto": "Base Portatil Stand 1 Ven 4 Posic 2 Usb / Garantía: 1 año.",
-      "costo": 2682129.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-05-15 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 93,
-      "dias_stock": {
-        "day_4": 93
-      },
-      "imagen": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 176,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "ACCESORIOS / BASES REFRIGERANTES",
-      "marca": "XKIM",
-      "np": "1059965",
-      "producto": "Base Refrigerante Xkim 6 Ventiladores Cool Xtreme USB / Garantía: 1 año.",
-      "costo": 52000.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2024-04-03 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 7,
-      "dias_stock": {
-        "day_4": 7
-      },
-      "imagen": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 177,
-      "mes": "AGOSTO 2026",
-      "seccion": "LENOVO",
-      "categoria": "PORTÁTILES",
-      "marca": "LENOVO",
-      "np": "4X41C12468",
-      "producto": "MORRAL THINKPAD ESSENTIAL LENOVO 16”",
-      "costo": 8900000.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-03-26 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 0,
-      "dias_stock": {
-        "day_4": 0
-      },
-      "imagen": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 178,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "ACCESORIOS / MORRALES",
-      "marca": "TARGUS",
-      "np": "TSB966",
-      "producto": "Morral Targus Intellect EssentiaL 15.6”/ Garantía: 1 año.",
-      "costo": 3866352.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-04-06 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 168,
-      "dias_stock": {
-        "day_4": 168
-      },
-      "imagen": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 179,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "TARJETAS DE CONTROL",
-      "marca": "OTRAS",
-      "np": "909",
-      "producto": "Tarjetas De Proximidad Mifare 1k",
-      "costo": 155425.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2023-07-21 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 0,
-      "dias_stock": {
-        "day_4": 0
-      },
-      "imagen": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 180,
-      "mes": "AGOSTO 2026",
-      "seccion": "ACCESORIOS Y PERIFÉRICOS",
-      "categoria": "CABLES / CONECTIVIDAD",
-      "marca": "APPLE",
-      "np": "MW613AM/A",
-      "producto": "Cable Apple Usb-C A MagSafe 3 2m",
-      "costo": 21883718.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2025-11-04 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 0,
-      "dias_stock": {
-        "day_4": 0
-      },
-      "imagen": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 181,
-      "mes": "AGOSTO 2026",
-      "seccion": "LENOVO",
-      "categoria": "PORTÁTILES",
-      "marca": "LENOVO",
-      "np": "PROVEE-21QD001",
-      "producto": "Portatil Lenovo ThinkPad T14 G6/ Procesador: Intel® ULTRA 5 / Memoria: 16GB / Disco Duro: 512 / Sistema Operativo : Win 11 pro / Pantalla: 14” / Garantía 3 años Premier",
-      "costo": 490875590.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-05-19 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 22,
-      "dias_stock": {
-        "day_4": 22
-      },
-      "imagen": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 182,
-      "mes": "AGOSTO 2026",
-      "seccion": "LENOVO",
-      "categoria": "DESKTOPS / PCS",
-      "marca": "LENOVO",
-      "np": "13DG000NLS",
-      "producto": "PC THINKCENTER GEN 5 / Procesador: Intel® i5 / Memoria: 16GB / Disco Duro: 512 / Sistema Operativo : Win 11 pro-64 / / Garantía 3 años",
-      "costo": 230294549.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-05-29 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 7,
-      "dias_stock": {
-        "day_4": 7
-      },
-      "imagen": "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 183,
-      "mes": "AGOSTO 2026",
-      "seccion": "LENOVO",
-      "categoria": "WORKSTATIONS",
-      "marca": "LENOVO",
-      "np": "30FS000YLM",
-      "producto": "WS lenovo thinkstation / Procesador: Intel® i9 / Memoria: 16GB / Disco Duro: 1tb / Sistema Operativo : Win 11 pro / / Garantía 3 años",
-      "costo": 759171000.0,
-      "iva": "Sí",
-      "fecha_ingreso": "2026-04-24 00:00:00",
-      "trm_ingreso": 3950.0,
-      "cantidad_actual": 1,
-      "dias_stock": {
-        "day_4": 1
-      },
-      "imagen": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=500&auto=format&fit=crop&q=80"
-    },
-    {
-      "id": 184,
-      "mes": "AGOSTO 2026",
-      "seccion": "MONITORES",
-      "categoria": "MONITORES",
-      "marca": "SAMSUNG",
       "np": "LS24F320GANXZA",
       "producto": "Monitor Samsung 24\" S3 Essential full hd 120hz”",
-      "costo": 24927978.0,
+      "costo": 24919738.0,
       "iva": "Sí",
-      "fecha_ingreso": "2026-05-26 00:00:00",
-      "trm_ingreso": 3880.0,
-      "cantidad_actual": 73,
+      "fecha_ingreso": "27/07/26",
+      "cantidad_actual": 58,
+      "id": 154,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
       "dias_stock": {
-        "day_4": 73
+        "day_4": 58
       },
       "imagen": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&auto=format&fit=crop&q=80"
     },
     {
-      "id": 185,
+      "seccion": "DELL",
+      "categoria": "MONITORES",
+      "marca": "DELL",
+      "np": "LS22F310EANXZA",
+      "producto": "Monitor Samsung 22\" S3 Essential full hd 100hz”",
+      "costo": 18480834.0,
+      "iva": "Sí",
+      "fecha_ingreso": "28/07/26",
+      "cantidad_actual": 102,
+      "id": 155,
       "mes": "AGOSTO 2026",
-      "seccion": "LENOVO",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 102
+      },
+      "imagen": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
       "categoria": "MONITORES",
       "marca": "LENOVO",
       "np": "68C2KAC1LA",
       "producto": "Monitor Lenovo L24-4e 23\"8 Hdmi/vga",
       "costo": 28349042.0,
       "iva": "Sí",
-      "fecha_ingreso": "2026-06-01 00:00:00",
+      "fecha_ingreso": "01/06/26",
+      "cantidad_actual": 18,
+      "id": 156,
+      "mes": "AGOSTO 2026",
       "trm_ingreso": 3950.0,
-      "cantidad_actual": 22,
       "dias_stock": {
-        "day_4": 22
+        "day_4": 18
       },
       "imagen": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&auto=format&fit=crop&q=80"
     },
     {
-      "id": 186,
-      "mes": "AGOSTO 2026",
       "seccion": "DELL",
-      "categoria": "PORTÁTILES",
+      "categoria": "IMPRESORAS",
       "marca": "DELL",
-      "np": "6DWCJ-16",
-      "producto": "portatil dell pro 14 / Procesador: Intel® Core™ i5 / Memoria: 16GB / Disco Duro: 512 / Sistema Operativo: Win 11 pro / Pantalla: 14” / Garantía : 1 año",
-      "costo": 237600000.0,
+      "np": "MA4000X/L",
+      "producto": "Impresora Multifuncional Kyocera 3 en 1 44ppm",
+      "costo": 149945000.0,
       "iva": "No",
-      "fecha_ingreso": "2026-03-26 00:00:00",
+      "fecha_ingreso": "27/03/26",
+      "cantidad_actual": 1,
+      "id": 157,
+      "mes": "AGOSTO 2026",
       "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 1
+      },
+      "imagen": "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "IMPRESORAS",
+      "marca": "DELL",
+      "np": "MA4000WIFX/L",
+      "producto": "Impresora  Mfp Kyosera Ma 4000 4000 42ppm",
+      "costo": 239042700.0,
+      "iva": "No",
+      "fecha_ingreso": "27/03/26",
+      "cantidad_actual": 1,
+      "id": 158,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 1
+      },
+      "imagen": "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "IMPRESORAS",
+      "marca": "DELL",
+      "np": "MA4500IX",
+      "producto": "Impresora Multifuncional Kyocera ecosys",
+      "costo": 341903500.0,
+      "iva": "No",
+      "fecha_ingreso": "27/03/26",
+      "cantidad_actual": 1,
+      "id": 159,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 1
+      },
+      "imagen": "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "ALMACENAMIENTO / SSD",
+      "marca": "DELL",
+      "np": "ALEG-800-1000GC",
+      "producto": "Disco Ssd M.2 Gen 4x4 Legend 800 Garantía: 1 año",
+      "costo": 36110986.0,
+      "iva": "Sí",
+      "fecha_ingreso": "26/02/26",
+      "cantidad_actual": 83,
+      "id": 160,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 83
+      },
+      "imagen": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "ACCESORIOS Y PERIFÉRICOS",
+      "marca": "DELL",
+      "np": "981-000014",
+      "producto": "Diadema Logitech H390 Confort alámbrica. Micrófono con supresión de ruido: Reduce el molesto ruido del fondo, Diadema ajustable.",
+      "costo": 0.0,
+      "iva": "No",
+      "fecha_ingreso": "",
+      "cantidad_actual": 0,
+      "id": 161,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 0
+      },
+      "imagen": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "DIADEMAS / AUDIO",
+      "marca": "DELL",
+      "np": "520-BBLL",
+      "producto": "Auricular Con Cable Dell WH125",
+      "costo": 6887425.0,
+      "iva": "Sí",
+      "fecha_ingreso": "25/03/26",
+      "cantidad_actual": 46,
+      "id": 162,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 46
+      },
+      "imagen": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "PERIFÉRICOS / MOUSE & TECLADO",
+      "marca": "DELL",
+      "np": "910-004053",
+      "producto": "Mouse Logitech M90 Alámbrico Negro / Conexión: USB 2.0- Cable / Garantía: 1 año.",
+      "costo": 1340761.0,
+      "iva": "Sí",
+      "fecha_ingreso": "17/07/26",
+      "cantidad_actual": 67,
+      "id": 163,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 67
+      },
+      "imagen": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "PERIFÉRICOS / MOUSE & TECLADO",
+      "marca": "DELL",
+      "np": "910-002225",
+      "producto": "Mouse Logitech M185 Inalambrico Negro gris / Conexión: Receptor USB Garantía: 1 año.",
+      "costo": 3605895.0,
+      "iva": "Sí",
+      "fecha_ingreso": "08/09/25",
+      "cantidad_actual": 9,
+      "id": 164,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 9
+      },
+      "imagen": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "PERIFÉRICOS / MOUSE & TECLADO",
+      "marca": "DELL",
+      "np": "920-004428",
+      "producto": "Combo Teclado + Mouse Logitech MK120 USB / Conexión: Receptor USB / Garantía: 1 año.",
+      "costo": 3821989.0,
+      "iva": "Sí",
+      "fecha_ingreso": "16/07/26",
+      "cantidad_actual": 119,
+      "id": 165,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 119
+      },
+      "imagen": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "PERIFÉRICOS / MOUSE & TECLADO",
+      "marca": "DELL",
+      "np": "920-007901",
+      "producto": "Combo Teclado + Mouse Logitech MK 235 Inalámbrico / Conexión: Receptor USB / Garantía: 1 año.",
+      "costo": 6120877.0,
+      "iva": "Sí",
+      "fecha_ingreso": "02/07/26",
+      "cantidad_actual": 38,
+      "id": 166,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 38
+      },
+      "imagen": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "PERIFÉRICOS / MOUSE & TECLADO",
+      "marca": "DELL",
+      "np": "920-004432",
+      "producto": "Combo Teclado + Mouse Logitech Mk270 Inalámbrico / Conexión: Receptor USB / Garantía: 1 año.",
+      "costo": 6996901.0,
+      "iva": "Sí",
+      "fecha_ingreso": "16/07/26",
+      "cantidad_actual": 139,
+      "id": 167,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 139
+      },
+      "imagen": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "PERIFÉRICOS / MOUSE & TECLADO",
+      "marca": "DELL",
+      "np": "920-013513",
+      "producto": "Combo Teclado + Mouse Logitech Mk250 Bluetooth / Conexión: Bluetooth / Garantía: 1 año.",
+      "costo": 8100198.0,
+      "iva": "Sí",
+      "fecha_ingreso": "16/04/26",
       "cantidad_actual": 20,
+      "id": 168,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
       "dias_stock": {
         "day_4": 20
       },
+      "imagen": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "PERIFÉRICOS / MOUSE & TECLADO",
+      "marca": "DELL",
+      "np": "KM-160",
+      "producto": "Combo Teclado + Mouse GENIUS alámbrico / Conexión: Receptor USB / Garantía: 1 año.",
+      "costo": 2483178.0,
+      "iva": "Sí",
+      "fecha_ingreso": "27/07/26",
+      "cantidad_actual": 180,
+      "id": 169,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 180
+      },
+      "imagen": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "PERIFÉRICOS / MOUSE & TECLADO",
+      "marca": "DELL",
+      "np": "DX-120",
+      "producto": "Mouse Genius DX-120 Usb alámbrico / Conexión: Receptor USB / Garantía: 1 año.",
+      "costo": 773211.0,
+      "iva": "Sí",
+      "fecha_ingreso": "24/07/26",
+      "cantidad_actual": 26,
+      "id": 170,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 26
+      },
+      "imagen": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "PORTÁTILES",
+      "marca": "DELL",
+      "np": "PA248U5",
+      "producto": "Base Portatil Refrigerante 2 Puertos Jaltech USB / Garantía: 1 año.",
+      "costo": 2486174.0,
+      "iva": "Sí",
+      "fecha_ingreso": "18/03/26",
+      "cantidad_actual": 90,
+      "id": 171,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 90
+      },
       "imagen": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "PORTÁTILES",
+      "marca": "DELL",
+      "np": "ACC-BXU-0737",
+      "producto": "Base Portatil Stand 1 Ven 4 Posic 2 Usb / Garantía: 1 año.",
+      "costo": 2629653.0,
+      "iva": "Sí",
+      "fecha_ingreso": "15/05/26",
+      "cantidad_actual": 44,
+      "id": 172,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 44
+      },
+      "imagen": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "ACCESORIOS / BASES REFRIGERANTES",
+      "marca": "DELL",
+      "np": "1059965",
+      "producto": "Base Refrigerante Xkim 6 Ventiladores Cool Xtreme USB / Garantía: 1 año.",
+      "costo": 52000.0,
+      "iva": "Sí",
+      "fecha_ingreso": "03/04/24",
+      "cantidad_actual": 7,
+      "id": 173,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 7
+      },
+      "imagen": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "PORTÁTILES",
+      "marca": "LENOVO",
+      "np": "4X41C12468",
+      "producto": "MORRAL THINKPAD ESSENTIAL  LENOVO 16”",
+      "costo": 8900000.0,
+      "iva": "Sí",
+      "fecha_ingreso": "26/03/26",
+      "cantidad_actual": 18,
+      "id": 174,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 18
+      },
+      "imagen": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "ACCESORIOS / MORRALES",
+      "marca": "DELL",
+      "np": "TSB966",
+      "producto": "Morral Targus Intellect EssentiaL 15.6”/ Garantía: 1 año.",
+      "costo": 3866352.0,
+      "iva": "Sí",
+      "fecha_ingreso": "06/04/26",
+      "cantidad_actual": 64,
+      "id": 175,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 64
+      },
+      "imagen": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "TARJETAS DE CONTROL",
+      "marca": "DELL",
+      "np": "0909",
+      "producto": "Tarjetas De Proximidad Mifare 1k",
+      "costo": 155425.0,
+      "iva": "Sí",
+      "fecha_ingreso": "21/07/23",
+      "cantidad_actual": 2,
+      "id": 176,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 2
+      },
+      "imagen": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&auto=format&fit=crop&q=80"
+    },
+    {
+      "seccion": "DELL",
+      "categoria": "CABLES / CONECTIVIDAD",
+      "marca": "DELL",
+      "np": "MW613AM/A",
+      "producto": "Cable Apple Usb-C A MagSafe 3 2m",
+      "costo": 21883718.0,
+      "iva": "Sí",
+      "fecha_ingreso": "04/11/25",
+      "cantidad_actual": 4,
+      "id": 177,
+      "mes": "AGOSTO 2026",
+      "trm_ingreso": 3950.0,
+      "dias_stock": {
+        "day_4": 4
+      },
+      "imagen": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&auto=format&fit=crop&q=80"
     }
   ]
 }
