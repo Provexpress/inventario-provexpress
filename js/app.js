@@ -1,6 +1,6 @@
 /* ══════════════════════════════════════════════════════════════
-   PROVEXPRESS INVENTARIO SUITE — APP LOGIC v4
-   Data-validated · Currency & Decimals Formatted · Official Mail Layout
+   PROVEXPRESS INVENTARIO SUITE — APP LOGIC v5
+   Chronological Month Sort Fix · Data-Validated
 ══════════════════════════════════════════════════════════════ */
 
 // ── State ─────────────────────────────────────────────────────
@@ -27,6 +27,12 @@ const CAT_COLORS = {
   'OTROS ACCESORIOS':                '#A78BFA',
 };
 
+const CHRONO_MONTHS = [
+  'ENERO 2026', 'FEBRERO 2026', 'MARZO 2026', 'ABRIL 2026',
+  'MAYO 2026', 'JUNIO 2026', 'JULIO 2026', 'AGOSTO 2026',
+  'SEPTIEMBRE 2026', 'OCTUBRE 2026', 'NOVIEMBRE 2026', 'DICIEMBRE 2026'
+];
+
 const TODAY_ISO = new Date().toISOString().slice(0, 10);
 
 // ── Boot ──────────────────────────────────────────────────────
@@ -39,12 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
 // ── Data ─────────────────────────────────────────────────────
 async function loadData() {
   try {
-    const res  = await fetch('inventory_data.json?' + Date.now());
+    const res  = await fetch('inventory_data.json?v=' + Date.now());
     const data = await res.json();
     const prods = data.products || [];
 
-    const months = [...new Set(prods.map(p => p.mes))].sort();
-    const curMonth = months[months.length - 1];
+    // Chronological month sort (AGOSTO > JULIO > JUNIO > MAYO)
+    const rawMonths = [...new Set(prods.map(p => p.mes))];
+    rawMonths.sort((a, b) => {
+      let idxA = CHRONO_MONTHS.indexOf(a);
+      let idxB = CHRONO_MONTHS.indexOf(b);
+      if (idxA === -1) idxA = 0;
+      if (idxB === -1) idxB = 0;
+      return idxA - idxB;
+    });
+
+    const curMonth = rawMonths[rawMonths.length - 1]; // Pick AGOSTO 2026 (the last month chronologically)
 
     ALL = prods.filter(p => p.mes === curMonth);
     
@@ -78,7 +93,6 @@ async function loadData() {
 function fmtCOP(n) {
   if (n === null || n === undefined || isNaN(n)) return '$ 0';
   const val = Number(n);
-  // Format with currency dot separators
   return '$ ' + val.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
 }
 
