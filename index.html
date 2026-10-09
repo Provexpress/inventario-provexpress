@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://alcdn.msauth.net/browser/2.38.3/js/msal-browser.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-  <link rel="stylesheet" href="css/styles.css?v=20260804-v4">
+  <link rel="stylesheet" href="css/styles.css?v=20261009-v1">
 </head>
 <body class="app-body">
 
@@ -55,6 +55,9 @@
         <span class="nav-badge">Inventario & Métricas</span>
       </div>
       <div class="nav-right">
+        <button id="btnSyncOutlook" type="button" class="btn-sync-outlook" onclick="syncFromOutlook()" title="Sincronizar último correo de inventario desde Outlook">
+          <i class="fa-solid fa-arrows-rotate"></i> <span class="hide-xs">Actualizar desde Outlook</span>
+        </button>
         <div class="sync-badge"><span class="sync-dot"></span><span id="syncLabel">Cargando…</span></div>
         <div id="authUser" class="user-info" hidden></div>
         <button id="authLogoutBtn" type="button" class="btn-logout" onclick="logoutMicrosoft365()" hidden>
@@ -400,7 +403,7 @@
 
 <div id="toast"></div>
 
-<script src="js/auth.js?v=20260804-v4"></script>
-<script src="js/app.js?v=20260804-v4"></script>
+<script src="js/auth.js?v=20261009-v1"></script>
+<script src="js/app.js?v=20261009-v1"></script>
 </body>
 </html>

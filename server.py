@@ -26,12 +26,30 @@ class SyncHandler(BaseHTTPRequestHandler):
         if self.path == '/api/status':
             self._set_headers(200)
             self.wfile.write(json.dumps({'status': 'online', 'excel_path': EXCEL_PATH}).encode('utf-8'))
+        elif self.path == '/api/sync_from_outlook':
+            try:
+                import actualizar_desde_outlook
+                actualizar_desde_outlook.main()
+                self._set_headers(200)
+                self.wfile.write(json.dumps({'success': True, 'message': 'Inventario actualizado exitosamente al día de hoy desde Outlook.'}).encode('utf-8'))
+            except Exception as e:
+                self._set_headers(500)
+                self.wfile.write(json.dumps({'success': False, 'error': str(e)}).encode('utf-8'))
         else:
             self._set_headers(404)
             self.wfile.write(json.dumps({'error': 'Not found'}).encode('utf-8'))
 
     def do_POST(self):
-        if self.path == '/api/sync_and_send':
+        if self.path == '/api/sync_from_outlook':
+            try:
+                import actualizar_desde_outlook
+                actualizar_desde_outlook.main()
+                self._set_headers(200)
+                self.wfile.write(json.dumps({'success': True, 'message': 'Inventario actualizado exitosamente al día de hoy desde Outlook.'}).encode('utf-8'))
+            except Exception as e:
+                self._set_headers(500)
+                self.wfile.write(json.dumps({'success': False, 'error': str(e)}).encode('utf-8'))
+        elif self.path == '/api/sync_and_send':
             content_length = int(self.headers.get('Content-Length', 0))
             post_data = self.rfile.read(content_length)
             

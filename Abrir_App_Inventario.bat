@@ -2,17 +2,21 @@
 title Provexpress - Aplicacion Web de Inventario y Metricas
 color 0A
 cls
+cd /d "%~dp0"
 echo ======================================================================
 echo           PROVEXPRESS - APLICACION WEB DE INVENTARIO Y METRICAS
 echo ======================================================================
 echo.
-echo  1. Iniciando Servidor Puente de Sincronizacion Excel (OneDrive)...
-start /min cmd /c "cd /d "C:\Users\especialista.prevent\OneDrive - PROVEXPRESS SAS\Documents\Proyectos\inventario-provexpress" && python server.py"
+echo  1. Sincronizando inventario con el ultimo correo recibido en Outlook...
+python "actualizar_desde_outlook.py"
+echo.
+echo  2. Iniciando Servidor Puente de Sincronizacion WebApp...
+start /min cmd /c "cd /d "%~dp0" && python server.py"
 
 echo.
-echo  2. Abriendo Aplicacion Web en tu navegador...
+echo  3. Abriendo Aplicacion Web en tu navegador...
 timeout /t 2 /nobreak >nul
-start "" "C:\Users\especialista.prevent\OneDrive - PROVEXPRESS SAS\Documents\Proyectos\inventario-provexpress\index.html"
+start "" "%~dp0index.html"
 
 echo.
 echo ======================================================================

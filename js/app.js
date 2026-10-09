@@ -622,3 +622,31 @@ function fallbackMailto() {
   const body = ALL.slice(0, 8).map(p => `N/P: ${p.np} | ${p._qty} uds | ${p.producto.slice(0, 60)}`).join('\n');
   window.location.href = `mailto:especialista.preventa@provexpress.com.co?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body + '\n\n[Ver tabla completa en la aplicación web]')}`;
 }
+
+async function syncFromOutlook() {
+  const btn = document.getElementById('btnSyncOutlook');
+  const oldText = btn ? btn.innerHTML : '';
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>Sincronizando...</span>';
+  }
+  setSyncLabel('Sincronizando con Outlook...');
+
+  try {
+    const res = await fetch('http://localhost:8000/api/sync_from_outlook', { method: 'POST' });
+    const data = await res.json();
+    if (data.success) {
+      showToast('✓ ' + (data.message || 'Inventario actualizado desde Outlook'));
+      await loadData();
+    } else {
+      showToast('⚠ Error: ' + (data.error || 'No se pudo sincronizar'), true);
+    }
+  } catch (err) {
+    showToast('⚠ Servidor local (server.py) no detectado. Ejecuta Abrir_App_Inventario.bat o Actualizar_Inventario.bat', true);
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = oldText;
+    }
+  }
+}
