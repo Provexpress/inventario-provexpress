@@ -42,15 +42,17 @@ document.addEventListener('DOMContentLoaded', () => {
   loadData();
 });
 
+let RAW_PRODUCTS = [];
+
 // ── Data ─────────────────────────────────────────────────────
 async function loadData() {
   try {
     const res  = await fetch('inventory_data.json?v=' + Date.now());
     const data = await res.json();
-    const prods = data.products || [];
+    RAW_PRODUCTS = data.products || [];
 
-    // Chronological month sort (AGOSTO > JULIO > JUNIO > MAYO)
-    const rawMonths = [...new Set(prods.map(p => p.mes))];
+    // Chronological month sort (OCTUBRE > SEPTIEMBRE > AGOSTO > JULIO > JUNIO > MAYO)
+    const rawMonths = [...new Set(RAW_PRODUCTS.map(p => p.mes))];
     rawMonths.sort((a, b) => {
       let idxA = CHRONO_MONTHS.indexOf(a);
       let idxB = CHRONO_MONTHS.indexOf(b);
@@ -59,34 +61,69 @@ async function loadData() {
       return idxA - idxB;
     });
 
-    const curMonth = rawMonths[rawMonths.length - 1]; // Pick AGOSTO 2026 (the last month chronologically)
+    populateMonthSelector(rawMonths);
 
-    ALL = prods.filter(p => p.mes === curMonth);
-    
-    // Sort products by official email section order
-    const sectionOrder = ['EQUIPOS PARA RENTA', 'DELL', 'HP', 'LENOVO', 'MONITORES', 'IMPRESORAS', 'CELULARES', 'ACCESORIOS Y PERIFÉRICOS'];
-    ALL.sort((a, b) => {
-      let idxA = sectionOrder.indexOf(a.seccion);
-      let idxB = sectionOrder.indexOf(b.seccion);
-      if (idxA === -1) idxA = 99;
-      if (idxB === -1) idxB = 99;
-      return idxA - idxB;
-    });
-
-    ALL.forEach(p => {
-      p._qty = p.cantidad_actual ?? 0;
-      SNAP[p.np] = p._qty;
-    });
-
-    setSyncLabel(`✓ ${ALL.length} refs · ${curMonth}`);
-    renderDashboard();
-    applyFilters();
-    renderEmailPreview();
-    setEmailSubject();
+    const select = document.getElementById('selectMonth');
+    const targetMonth = select && select.value ? select.value : rawMonths[rawMonths.length - 1];
+    switchMonth(targetMonth);
   } catch (err) {
     setSyncLabel('⚠ Error al cargar datos');
     console.error('[loadData]', err);
   }
+}
+
+function populateMonthSelector(months) {
+  const select = document.getElementById('selectMonth');
+  if (!select) return;
+  const currentVal = select.value;
+  select.innerHTML = '';
+  // Show latest first
+  [...months].reverse().forEach(m => {
+    const opt = document.createElement('option');
+    opt.value = m;
+    opt.textContent = (m === months[months.length - 1]) ? `${m} (Activo · Hoy)` : m;
+    select.appendChild(opt);
+  });
+  if (currentVal && months.includes(currentVal)) {
+    select.value = currentVal;
+  } else if (months.length > 0) {
+    select.value = months[months.length - 1];
+  }
+}
+
+function onMonthChange(newMonth) {
+  switchMonth(newMonth);
+}
+
+function switchMonth(targetMonth) {
+  const select = document.getElementById('selectMonth');
+  if (select && select.value !== targetMonth) {
+    select.value = targetMonth;
+  }
+
+  ALL = RAW_PRODUCTS.filter(p => p.mes === targetMonth);
+  
+  // Sort products by official email section order
+  const sectionOrder = ['EQUIPOS PARA RENTA', 'DELL', 'HP', 'LENOVO', 'MONITORES', 'IMPRESORAS', 'CELULARES', 'ACCESORIOS Y PERIFÉRICOS'];
+  ALL.sort((a, b) => {
+    let idxA = sectionOrder.indexOf(a.seccion);
+    let idxB = sectionOrder.indexOf(b.seccion);
+    if (idxA === -1) idxA = 99;
+    if (idxB === -1) idxB = 99;
+    return idxA - idxB;
+  });
+
+  SNAP = {};
+  ALL.forEach(p => {
+    p._qty = p.cantidad_actual ?? 0;
+    SNAP[p.np] = p._qty;
+  });
+
+  setSyncLabel(`✓ ${ALL.length} refs · ${targetMonth}`);
+  renderDashboard();
+  applyFilters();
+  renderEmailPreview();
+  setEmailSubject();
 }
 
 // ── Helpers ───────────────────────────────────────────────────
