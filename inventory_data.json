@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-09T14:16:19.277669",
+  "last_updated": "2026-10-13T08:40:52.389511",
   "excel_path": "C:\\Users\\especialista.prevent\\OneDrive - PROVEXPRESS SAS\\Excels Invetario\\plantilla_inventario_matriz.xlsx",
   "total_products": 360,
   "products": [
@@ -7546,13 +7546,13 @@
       "cantidad_actual": 43,
       "imagen": "img/products/image006.png",
       "dias_stock": {
-        "day_1": 180,
-        "day_2": 179,
-        "day_5": 179,
-        "day_6": 43,
-        "day_7": 43,
+        "day_9": 43,
         "day_8": 43,
-        "day_9": 43
+        "day_7": 43,
+        "day_6": 43,
+        "day_5": 179,
+        "day_2": 179,
+        "day_1": 180
       },
       "id": 316,
       "mes": "OCTUBRE 2026",
@@ -7570,13 +7570,13 @@
       "cantidad_actual": 1,
       "imagen": "img/products/image043.png",
       "dias_stock": {
-        "day_1": 1,
-        "day_2": 1,
-        "day_5": 1,
-        "day_6": 1,
-        "day_7": 1,
+        "day_9": 1,
         "day_8": 1,
-        "day_9": 1
+        "day_7": 1,
+        "day_6": 1,
+        "day_5": 1,
+        "day_2": 1,
+        "day_1": 1
       },
       "id": 317,
       "mes": "OCTUBRE 2026",
@@ -7594,13 +7594,13 @@
       "cantidad_actual": 7,
       "imagen": "img/products/image042.png",
       "dias_stock": {
-        "day_1": 7,
-        "day_2": 7,
-        "day_5": 7,
-        "day_6": 7,
-        "day_7": 7,
+        "day_9": 7,
         "day_8": 7,
-        "day_9": 7
+        "day_7": 7,
+        "day_6": 7,
+        "day_5": 7,
+        "day_2": 7,
+        "day_1": 7
       },
       "id": 318,
       "mes": "OCTUBRE 2026",
@@ -7618,13 +7618,13 @@
       "cantidad_actual": 46,
       "imagen": "img/products/image016.jpg",
       "dias_stock": {
-        "day_1": 56,
-        "day_2": 52,
-        "day_5": 52,
-        "day_6": 52,
-        "day_7": 46,
+        "day_9": 46,
         "day_8": 46,
-        "day_9": 46
+        "day_7": 46,
+        "day_6": 52,
+        "day_5": 52,
+        "day_2": 52,
+        "day_1": 56
       },
       "id": 319,
       "mes": "OCTUBRE 2026",
@@ -7642,13 +7642,13 @@
       "cantidad_actual": 22,
       "imagen": "img/products/image031.png",
       "dias_stock": {
-        "day_1": 22,
-        "day_2": 22,
-        "day_5": 22,
-        "day_6": 22,
-        "day_7": 22,
+        "day_9": 22,
         "day_8": 22,
-        "day_9": 22
+        "day_7": 22,
+        "day_6": 22,
+        "day_5": 22,
+        "day_2": 22,
+        "day_1": 22
       },
       "id": 320,
       "mes": "OCTUBRE 2026",
@@ -7666,13 +7666,13 @@
       "cantidad_actual": 43,
       "imagen": "img/products/image006.png",
       "dias_stock": {
-        "day_1": 180,
-        "day_2": 179,
-        "day_5": 179,
-        "day_6": 43,
-        "day_7": 43,
+        "day_9": 43,
         "day_8": 43,
-        "day_9": 43
+        "day_7": 43,
+        "day_6": 43,
+        "day_5": 179,
+        "day_2": 179,
+        "day_1": 180
       },
       "id": 321,
       "mes": "OCTUBRE 2026",
@@ -7690,13 +7690,13 @@
       "cantidad_actual": 101,
       "imagen": "img/products/image033.jpg",
       "dias_stock": {
-        "day_1": 106,
-        "day_2": 106,
-        "day_5": 101,
-        "day_6": 101,
-        "day_7": 101,
+        "day_9": 101,
         "day_8": 101,
-        "day_9": 101
+        "day_7": 101,
+        "day_6": 101,
+        "day_5": 101,
+        "day_2": 106,
+        "day_1": 106
       },
       "id": 322,
       "mes": "OCTUBRE 2026",
@@ -7714,13 +7714,13 @@
       "cantidad_actual": 121,
       "imagen": "img/products/image032.jpg",
       "dias_stock": {
-        "day_1": 139,
-        "day_2": 139,
-        "day_5": 139,
-        "day_6": 139,
-        "day_7": 139,
+        "day_9": 121,
         "day_8": 139,
-        "day_9": 121
+        "day_7": 139,
+        "day_6": 139,
+        "day_5": 139,
+        "day_2": 139,
+        "day_1": 139
       },
       "id": 323,
       "mes": "OCTUBRE 2026",
@@ -7738,13 +7738,13 @@
       "cantidad_actual": 342,
       "imagen": "img/products/image034.jpg",
       "dias_stock": {
-        "day_1": 356,
-        "day_2": 356,
-        "day_5": 352,
-        "day_6": 350,
-        "day_7": 345,
+        "day_9": 342,
         "day_8": 345,
-        "day_9": 342
+        "day_7": 345,
+        "day_6": 350,
+        "day_5": 352,
+        "day_2": 356,
+        "day_1": 356
       },
       "id": 324,
       "mes": "OCTUBRE 2026",
@@ -7762,13 +7762,13 @@
       "cantidad_actual": 82,
       "imagen": "img/products/image036.png",
       "dias_stock": {
-        "day_1": 87,
-        "day_2": 87,
-        "day_5": 84,
-        "day_6": 84,
-        "day_7": 83,
+        "day_9": 82,
         "day_8": 83,
-        "day_9": 82
+        "day_7": 83,
+        "day_6": 84,
+        "day_5": 84,
+        "day_2": 87,
+        "day_1": 87
       },
       "id": 325,
       "mes": "OCTUBRE 2026",
@@ -7786,13 +7786,13 @@
       "cantidad_actual": 184,
       "imagen": "img/products/image035.jpg",
       "dias_stock": {
-        "day_1": 256,
-        "day_2": 218,
-        "day_5": 184,
-        "day_6": 184,
-        "day_7": 184,
+        "day_9": 184,
         "day_8": 184,
-        "day_9": 184
+        "day_7": 184,
+        "day_6": 184,
+        "day_5": 184,
+        "day_2": 218,
+        "day_1": 256
       },
       "id": 326,
       "mes": "OCTUBRE 2026",
@@ -7810,13 +7810,13 @@
       "cantidad_actual": 115,
       "imagen": "img/products/image037.png",
       "dias_stock": {
-        "day_1": 143,
-        "day_2": 143,
-        "day_5": 136,
-        "day_6": 136,
-        "day_7": 136,
+        "day_9": 115,
         "day_8": 136,
-        "day_9": 115
+        "day_7": 136,
+        "day_6": 136,
+        "day_5": 136,
+        "day_2": 143,
+        "day_1": 143
       },
       "id": 327,
       "mes": "OCTUBRE 2026",
@@ -7834,13 +7834,13 @@
       "cantidad_actual": 200,
       "imagen": "img/products/image041.png",
       "dias_stock": {
-        "day_1": 200,
-        "day_2": 200,
-        "day_5": 200,
-        "day_6": 200,
-        "day_7": 200,
+        "day_9": 200,
         "day_8": 200,
-        "day_9": 200
+        "day_7": 200,
+        "day_6": 200,
+        "day_5": 200,
+        "day_2": 200,
+        "day_1": 200
       },
       "id": 328,
       "mes": "OCTUBRE 2026",
@@ -7858,13 +7858,13 @@
       "cantidad_actual": 200,
       "imagen": "img/products/image039.jpg",
       "dias_stock": {
-        "day_1": 200,
-        "day_2": 200,
-        "day_5": 200,
-        "day_6": 200,
-        "day_7": 200,
+        "day_9": 200,
         "day_8": 200,
-        "day_9": 200
+        "day_7": 200,
+        "day_6": 200,
+        "day_5": 200,
+        "day_2": 200,
+        "day_1": 200
       },
       "id": 329,
       "mes": "OCTUBRE 2026",
@@ -7882,13 +7882,13 @@
       "cantidad_actual": 60,
       "imagen": "img/products/image038.jpg",
       "dias_stock": {
-        "day_1": 158,
-        "day_2": 158,
-        "day_5": 158,
-        "day_6": 158,
-        "day_7": 121,
+        "day_9": 60,
         "day_8": 121,
-        "day_9": 60
+        "day_7": 121,
+        "day_6": 158,
+        "day_5": 158,
+        "day_2": 158,
+        "day_1": 158
       },
       "id": 330,
       "mes": "OCTUBRE 2026",
@@ -7906,13 +7906,13 @@
       "cantidad_actual": 75,
       "imagen": "img/products/image040.png",
       "dias_stock": {
-        "day_1": 124,
-        "day_2": 124,
-        "day_5": 124,
-        "day_6": 124,
-        "day_7": 75,
+        "day_9": 75,
         "day_8": 75,
-        "day_9": 75
+        "day_7": 75,
+        "day_6": 124,
+        "day_5": 124,
+        "day_2": 124,
+        "day_1": 124
       },
       "id": 331,
       "mes": "OCTUBRE 2026",
@@ -7930,11 +7930,11 @@
       "cantidad_actual": 47,
       "imagen": "img/products/image017.png",
       "dias_stock": {
-        "day_5": 51,
-        "day_6": 51,
-        "day_7": 51,
+        "day_9": 47,
         "day_8": 49,
-        "day_9": 47
+        "day_7": 51,
+        "day_6": 51,
+        "day_5": 51
       },
       "id": 332,
       "mes": "OCTUBRE 2026",
@@ -7952,10 +7952,10 @@
       "cantidad_actual": 6,
       "imagen": "img/products/image010.png",
       "dias_stock": {
-        "day_6": 6,
-        "day_7": 6,
+        "day_9": 6,
         "day_8": 6,
-        "day_9": 6
+        "day_7": 6,
+        "day_6": 6
       },
       "id": 333,
       "mes": "OCTUBRE 2026",
@@ -7973,13 +7973,13 @@
       "cantidad_actual": 2,
       "imagen": "img/products/image008.png",
       "dias_stock": {
-        "day_1": 2,
-        "day_2": 2,
-        "day_5": 2,
-        "day_6": 2,
-        "day_7": 2,
+        "day_9": 2,
         "day_8": 2,
-        "day_9": 2
+        "day_7": 2,
+        "day_6": 2,
+        "day_5": 2,
+        "day_2": 2,
+        "day_1": 2
       },
       "id": 334,
       "mes": "OCTUBRE 2026",
@@ -7997,13 +7997,13 @@
       "cantidad_actual": 17,
       "imagen": "img/products/image008.png",
       "dias_stock": {
-        "day_1": 18,
-        "day_2": 18,
-        "day_5": 18,
-        "day_6": 18,
-        "day_7": 17,
+        "day_9": 17,
         "day_8": 17,
-        "day_9": 17
+        "day_7": 17,
+        "day_6": 18,
+        "day_5": 18,
+        "day_2": 18,
+        "day_1": 18
       },
       "id": 335,
       "mes": "OCTUBRE 2026",
@@ -8021,13 +8021,13 @@
       "cantidad_actual": 80,
       "imagen": "img/products/image008.png",
       "dias_stock": {
-        "day_1": 82,
-        "day_2": 82,
-        "day_5": 82,
-        "day_6": 82,
-        "day_7": 82,
+        "day_9": 80,
         "day_8": 82,
-        "day_9": 80
+        "day_7": 82,
+        "day_6": 82,
+        "day_5": 82,
+        "day_2": 82,
+        "day_1": 82
       },
       "id": 336,
       "mes": "OCTUBRE 2026",
@@ -8045,13 +8045,13 @@
       "cantidad_actual": 49,
       "imagen": "img/products/image009.png",
       "dias_stock": {
-        "day_1": 49,
-        "day_2": 49,
-        "day_5": 49,
-        "day_6": 49,
-        "day_7": 49,
+        "day_9": 49,
         "day_8": 49,
-        "day_9": 49
+        "day_7": 49,
+        "day_6": 49,
+        "day_5": 49,
+        "day_2": 49,
+        "day_1": 49
       },
       "id": 337,
       "mes": "OCTUBRE 2026",
@@ -8069,13 +8069,13 @@
       "cantidad_actual": 2,
       "imagen": "img/products/image046.jpg",
       "dias_stock": {
-        "day_1": 2,
-        "day_2": 2,
-        "day_5": 2,
-        "day_6": 2,
-        "day_7": 2,
+        "day_9": 2,
         "day_8": 2,
-        "day_9": 2
+        "day_7": 2,
+        "day_6": 2,
+        "day_5": 2,
+        "day_2": 2,
+        "day_1": 2
       },
       "id": 338,
       "mes": "OCTUBRE 2026",
@@ -8093,13 +8093,13 @@
       "cantidad_actual": 25,
       "imagen": "img/products/image015.png",
       "dias_stock": {
-        "day_1": 25,
-        "day_2": 25,
-        "day_5": 25,
-        "day_6": 25,
-        "day_7": 25,
+        "day_9": 25,
         "day_8": 25,
-        "day_9": 25
+        "day_7": 25,
+        "day_6": 25,
+        "day_5": 25,
+        "day_2": 25,
+        "day_1": 25
       },
       "id": 339,
       "mes": "OCTUBRE 2026",
@@ -8117,13 +8117,13 @@
       "cantidad_actual": 3,
       "imagen": "img/products/image013.png",
       "dias_stock": {
-        "day_1": 8,
-        "day_2": 8,
-        "day_5": 8,
-        "day_6": 3,
-        "day_7": 3,
+        "day_9": 3,
         "day_8": 3,
-        "day_9": 3
+        "day_7": 3,
+        "day_6": 3,
+        "day_5": 8,
+        "day_2": 8,
+        "day_1": 8
       },
       "id": 340,
       "mes": "OCTUBRE 2026",
@@ -8141,13 +8141,13 @@
       "cantidad_actual": 329,
       "imagen": "img/products/image012.png",
       "dias_stock": {
-        "day_1": 396,
-        "day_2": 391,
-        "day_5": 389,
-        "day_6": 383,
-        "day_7": 383,
+        "day_9": 329,
         "day_8": 351,
-        "day_9": 329
+        "day_7": 383,
+        "day_6": 383,
+        "day_5": 389,
+        "day_2": 391,
+        "day_1": 396
       },
       "id": 341,
       "mes": "OCTUBRE 2026",
@@ -8165,13 +8165,13 @@
       "cantidad_actual": 67,
       "imagen": "img/products/image011.png",
       "dias_stock": {
-        "day_1": 92,
-        "day_2": 90,
-        "day_5": 75,
-        "day_6": 70,
-        "day_7": 70,
+        "day_9": 67,
         "day_8": 70,
-        "day_9": 67
+        "day_7": 70,
+        "day_6": 70,
+        "day_5": 75,
+        "day_2": 90,
+        "day_1": 92
       },
       "id": 342,
       "mes": "OCTUBRE 2026",
@@ -8189,13 +8189,13 @@
       "cantidad_actual": 1,
       "imagen": "img/products/image014.png",
       "dias_stock": {
-        "day_1": 1,
-        "day_2": 1,
-        "day_5": 1,
-        "day_6": 1,
-        "day_7": 1,
+        "day_9": 1,
         "day_8": 1,
-        "day_9": 1
+        "day_7": 1,
+        "day_6": 1,
+        "day_5": 1,
+        "day_2": 1,
+        "day_1": 1
       },
       "id": 343,
       "mes": "OCTUBRE 2026",
@@ -8213,13 +8213,13 @@
       "cantidad_actual": 18,
       "imagen": "img/products/image044.png",
       "dias_stock": {
-        "day_1": 18,
-        "day_2": 18,
-        "day_5": 18,
-        "day_6": 18,
-        "day_7": 18,
+        "day_9": 18,
         "day_8": 18,
-        "day_9": 18
+        "day_7": 18,
+        "day_6": 18,
+        "day_5": 18,
+        "day_2": 18,
+        "day_1": 18
       },
       "id": 344,
       "mes": "OCTUBRE 2026",
@@ -8237,13 +8237,13 @@
       "cantidad_actual": 4,
       "imagen": "img/products/image047.jpg",
       "dias_stock": {
-        "day_1": 4,
-        "day_2": 4,
-        "day_5": 4,
-        "day_6": 4,
-        "day_7": 4,
+        "day_9": 4,
         "day_8": 4,
-        "day_9": 4
+        "day_7": 4,
+        "day_6": 4,
+        "day_5": 4,
+        "day_2": 4,
+        "day_1": 4
       },
       "id": 345,
       "mes": "OCTUBRE 2026",
@@ -8261,13 +8261,13 @@
       "cantidad_actual": 385,
       "imagen": "img/products/image045.png",
       "dias_stock": {
-        "day_1": 385,
-        "day_2": 385,
-        "day_5": 385,
-        "day_6": 385,
-        "day_7": 385,
+        "day_9": 385,
         "day_8": 385,
-        "day_9": 385
+        "day_7": 385,
+        "day_6": 385,
+        "day_5": 385,
+        "day_2": 385,
+        "day_1": 385
       },
       "id": 346,
       "mes": "OCTUBRE 2026",
@@ -8285,13 +8285,13 @@
       "cantidad_actual": 121,
       "imagen": "img/products/image019.png",
       "dias_stock": {
-        "day_1": 1,
-        "day_2": 1,
-        "day_5": 165,
-        "day_6": 148,
-        "day_7": 146,
+        "day_9": 121,
         "day_8": 126,
-        "day_9": 121
+        "day_7": 146,
+        "day_6": 148,
+        "day_5": 165,
+        "day_2": 1,
+        "day_1": 1
       },
       "id": 347,
       "mes": "OCTUBRE 2026",
@@ -8309,13 +8309,13 @@
       "cantidad_actual": 43,
       "imagen": "img/products/image018.png",
       "dias_stock": {
-        "day_1": 80,
-        "day_2": 73,
-        "day_5": 64,
-        "day_6": 63,
-        "day_7": 53,
+        "day_9": 43,
         "day_8": 50,
-        "day_9": 43
+        "day_7": 53,
+        "day_6": 63,
+        "day_5": 64,
+        "day_2": 73,
+        "day_1": 80
       },
       "id": 348,
       "mes": "OCTUBRE 2026",
@@ -8333,13 +8333,13 @@
       "cantidad_actual": 1,
       "imagen": "img/products/image028.png",
       "dias_stock": {
-        "day_1": 1,
-        "day_2": 1,
-        "day_5": 1,
-        "day_6": 1,
-        "day_7": 1,
+        "day_9": 1,
         "day_8": 1,
-        "day_9": 1
+        "day_7": 1,
+        "day_6": 1,
+        "day_5": 1,
+        "day_2": 1,
+        "day_1": 1
       },
       "id": 349,
       "mes": "OCTUBRE 2026",
@@ -8357,13 +8357,13 @@
       "cantidad_actual": 1,
       "imagen": "img/products/image027.png",
       "dias_stock": {
-        "day_1": 1,
-        "day_2": 1,
-        "day_5": 1,
-        "day_6": 1,
-        "day_7": 1,
+        "day_9": 1,
         "day_8": 1,
-        "day_9": 1
+        "day_7": 1,
+        "day_6": 1,
+        "day_5": 1,
+        "day_2": 1,
+        "day_1": 1
       },
       "id": 350,
       "mes": "OCTUBRE 2026",
@@ -8381,13 +8381,13 @@
       "cantidad_actual": 1,
       "imagen": "img/products/image007.png",
       "dias_stock": {
-        "day_1": 1,
-        "day_2": 1,
-        "day_5": 1,
-        "day_6": 1,
-        "day_7": 1,
+        "day_9": 1,
         "day_8": 1,
-        "day_9": 1
+        "day_7": 1,
+        "day_6": 1,
+        "day_5": 1,
+        "day_2": 1,
+        "day_1": 1
       },
       "id": 351,
       "mes": "OCTUBRE 2026",
@@ -8405,13 +8405,13 @@
       "cantidad_actual": 1,
       "imagen": "img/products/image026.png",
       "dias_stock": {
-        "day_1": 1,
-        "day_2": 1,
-        "day_5": 1,
-        "day_6": 1,
-        "day_7": 1,
+        "day_9": 1,
         "day_8": 1,
-        "day_9": 1
+        "day_7": 1,
+        "day_6": 1,
+        "day_5": 1,
+        "day_2": 1,
+        "day_1": 1
       },
       "id": 352,
       "mes": "OCTUBRE 2026",
@@ -8429,13 +8429,13 @@
       "cantidad_actual": 446,
       "imagen": "img/products/image030.jpg",
       "dias_stock": {
-        "day_1": 497,
-        "day_2": 494,
-        "day_5": 489,
-        "day_6": 461,
-        "day_7": 448,
+        "day_9": 446,
         "day_8": 448,
-        "day_9": 446
+        "day_7": 448,
+        "day_6": 461,
+        "day_5": 489,
+        "day_2": 494,
+        "day_1": 497
       },
       "id": 353,
       "mes": "OCTUBRE 2026",
@@ -8453,13 +8453,13 @@
       "cantidad_actual": 136,
       "imagen": "img/products/image029.jpg",
       "dias_stock": {
-        "day_1": 16,
-        "day_2": 16,
-        "day_5": 100,
-        "day_6": 97,
-        "day_7": 138,
+        "day_9": 136,
         "day_8": 138,
-        "day_9": 136
+        "day_7": 138,
+        "day_6": 97,
+        "day_5": 100,
+        "day_2": 16,
+        "day_1": 16
       },
       "id": 354,
       "mes": "OCTUBRE 2026",
@@ -8477,10 +8477,10 @@
       "cantidad_actual": 1,
       "imagen": "img/products/image022.png",
       "dias_stock": {
-        "day_6": 1,
-        "day_7": 1,
+        "day_9": 1,
         "day_8": 1,
-        "day_9": 1
+        "day_7": 1,
+        "day_6": 1
       },
       "id": 355,
       "mes": "OCTUBRE 2026",
@@ -8498,13 +8498,13 @@
       "cantidad_actual": 7,
       "imagen": "img/products/image023.png",
       "dias_stock": {
-        "day_1": 8,
-        "day_2": 8,
-        "day_5": 8,
-        "day_6": 8,
-        "day_7": 8,
+        "day_9": 7,
         "day_8": 8,
-        "day_9": 7
+        "day_7": 8,
+        "day_6": 8,
+        "day_5": 8,
+        "day_2": 8,
+        "day_1": 8
       },
       "id": 356,
       "mes": "OCTUBRE 2026",
@@ -8522,13 +8522,13 @@
       "cantidad_actual": 1,
       "imagen": "img/products/image025.png",
       "dias_stock": {
-        "day_1": 1,
-        "day_2": 1,
-        "day_5": 1,
-        "day_6": 1,
-        "day_7": 1,
+        "day_9": 1,
         "day_8": 1,
-        "day_9": 1
+        "day_7": 1,
+        "day_6": 1,
+        "day_5": 1,
+        "day_2": 1,
+        "day_1": 1
       },
       "id": 357,
       "mes": "OCTUBRE 2026",
@@ -8546,13 +8546,13 @@
       "cantidad_actual": 7,
       "imagen": "img/products/image024.png",
       "dias_stock": {
-        "day_1": 7,
-        "day_2": 7,
-        "day_5": 7,
-        "day_6": 7,
-        "day_7": 7,
+        "day_9": 7,
         "day_8": 7,
-        "day_9": 7
+        "day_7": 7,
+        "day_6": 7,
+        "day_5": 7,
+        "day_2": 7,
+        "day_1": 7
       },
       "id": 358,
       "mes": "OCTUBRE 2026",
@@ -8570,10 +8570,10 @@
       "cantidad_actual": 1,
       "imagen": "img/products/image020.png",
       "dias_stock": {
-        "day_6": 1,
-        "day_7": 1,
+        "day_9": 1,
         "day_8": 1,
-        "day_9": 1
+        "day_7": 1,
+        "day_6": 1
       },
       "id": 359,
       "mes": "OCTUBRE 2026",
@@ -8591,10 +8591,10 @@
       "cantidad_actual": 7,
       "imagen": "img/products/image021.png",
       "dias_stock": {
-        "day_6": 7,
-        "day_7": 7,
+        "day_9": 7,
         "day_8": 7,
-        "day_9": 7
+        "day_7": 7,
+        "day_6": 7
       },
       "id": 360,
       "mes": "OCTUBRE 2026",
