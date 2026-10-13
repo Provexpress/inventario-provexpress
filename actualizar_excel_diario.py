@@ -1,17 +1,11 @@
 """
 ═══════════════════════════════════════════════════════════════════════════════════
-PROVEXPRESS - ACTUALIZADOR AUTOMÁTICO DIARIO DEL EXCEL DE INVENTARIO
+PROVEXPRESS - ACTUALIZADOR DIARIO DE LA HOJA 'GENERADOR CORREO INVENTARIO'
 ═══════════════════════════════════════════════════════════════════════════════════
-Este script se ejecuta automáticamente a diario.
-1. Conecta con Microsoft Outlook vía MAPI.
-2. Escanea las carpetas 'INVENTARIOS' y 'Bandeja de entrada' buscando dinámicamente
-   el último correo de inventario del día/mes vigente.
-3. Extrae productos, cantidades, precios, categorías y secciones.
-4. Actualiza automáticamente el archivo Excel de OneDrive:
-   - Hoja 'Generador Correo Inventario' (C3, E3, G3, tabla con fórmulas =G*J).
-   - Hoja 'Matriz Inventario' (Stock actual y columna del día correspondiente).
-5. Sincroniza 'inventory_data.json' para mantener la plataforma web al día.
-6. Registra cada ejecución en un archivo de log permanente.
+Este script sincroniza automáticamente el Excel de OneDrive:
+'plantilla_inventario_matriz.xlsx'
+Garantizando que la hoja 'Generador Correo Inventario' sea un reflejo EXACTO 1:1
+del correo de inventario diario enviado por Alejandro Varón en Outlook.
 ═══════════════════════════════════════════════════════════════════════════════════
 """
 
@@ -101,8 +95,8 @@ def parse_email_tables(html_content, cid_to_file=None):
     def get_preceding_section(table):
         prev = table.find_previous(
             lambda tag: tag.name in ['p', 'div', 'h1', 'h2', 'h3', 'b', 'strong'] and
-            any(s in tag.get_text().upper() for s in ['RENTA', 'HP', 'LENOVO', 'DELL', 'APPLE', 'MONITOR', 'IMPRESORA', 'CELULAR', 'ACCESORIO', 'PERIFERICO', 'VENTA', 'TENER EN CUENTA']) and
-            len(tag.get_text().strip()) < 50
+            any(s in tag.get_text().upper() for s in ['RENTA', 'HP', 'LENOVO', 'DELL', 'APPLE', 'MONITOR', 'IMPRESORA', 'CELULAR', 'VENTA']) and
+            len(tag.get_text().strip()) < 40 and not tag.find_parent('table')
         )
         return prev.get_text().strip() if prev else 'VENTA'
 
@@ -153,53 +147,63 @@ def parse_email_tables(html_content, cid_to_file=None):
 
         sec_heading = get_preceding_section(t).upper()
 
-        # Marca
+        # Marca precisa
         brand = "OTRAS"
-        for b in ["HP", "LENOVO", "DELL", "APPLE", "SAMSUNG", "LOGITECH", "KYOCERA", "MOTOROLA", "ADATA", "GENIUS", "JALTECH", "XKIM", "TARGUS", "CISCO", "ARUBA", "RICOH", "POLY"]:
-            if b in prod_desc.upper() or b in np_val.upper() or b in sec_heading:
+        pd_upper = prod_desc.upper()
+        np_upper = np_val.upper()
+        
+        for b in ["OSTER", "TARGUS", "GENIUS", "LOGITECH", "KYOCERA", "MOTOROLA", "ADATA", "JALTECH", "XKIM", "CISCO", "ARUBA", "RICOH", "POLY", "SAMSUNG", "APPLE", "DELL", "HP", "LENOVO"]:
+            if b in pd_upper or b in np_upper:
                 brand = b
                 break
+        if brand == "OTRAS":
+            for b in ["HP", "LENOVO", "DELL", "APPLE", "SAMSUNG"]:
+                if b in sec_heading:
+                    brand = b
+                    break
                 
-        # Categoría
+        # Categoría Hardware
         cat = "ACCESORIOS Y PERIFÉRICOS"
-        pd = prod_desc.upper()
-        if "PORTATIL" in pd or "PROBOOK" in pd or "THINKPAD" in pd or "MACBOOK" in pd:
-            cat = "PORTÁTILES"
-        elif "MONITOR" in pd or "S3 ESSENTIAL" in pd:
-            cat = "MONITORES"
-        elif "IMPRESORA" in pd or "MULTIFUNCIONAL" in pd or "MFP" in pd:
-            cat = "IMPRESORAS"
-        elif "DIADEMA" in pd or "AURICULAR" in pd or "HEADSET" in pd:
-            cat = "DIADEMAS / AUDIO"
-        elif "MOUSE" in pd or "TECLADO" in pd or "COMBO" in pd:
-            cat = "PERIFÉRICOS / MOUSE & TECLADO"
-        elif "CELULAR" in pd or "IPAD" in pd or "TABLET" in pd or "MOTO G" in pd:
-            cat = "CELULARES / MÓVILES"
-        elif "DISCO" in pd or "SSD" in pd or "ALMACENAMIENTO" in pd:
-            cat = "ALMACENAMIENTO / SSD"
-        elif "BASE" in pd or "REFRIGERANTE" in pd:
-            cat = "ACCESORIOS / BASES REFRIGERANTES"
-        elif "MORRAL" in pd:
-            cat = "ACCESORIOS / MORRALES"
-        elif "CABLE" in pd:
-            cat = "CABLES / CONECTIVIDAD"
-        elif "TARJETA" in pd:
-            cat = "TARJETAS DE CONTROL"
-        elif "PC" in pd or "DESKTOP" in pd or "WS" in pd or "THINKSTATION" in pd:
-            cat = "DESKTOPS / PCS"
-            
-        if "RENTA" in sec_heading:
+        if "RENTA" in sec_heading or "RENTA" in pd_upper:
             cat = "EQUIPOS PARA RENTA"
+        elif "MORRAL" in pd_upper:
+            cat = "ACCESORIOS / MORRALES"
+        elif "PORTATIL" in pd_upper or "PROBOOK" in pd_upper or "THINKPAD" in pd_upper or "MACBOOK" in pd_upper:
+            cat = "PORTÁTILES"
+        elif "MONITOR" in pd_upper or "S3 ESSENTIAL" in pd_upper:
+            cat = "MONITORES"
+        elif "IMPRESORA" in pd_upper or "MULTIFUNCIONAL" in pd_upper or "MFP" in pd_upper:
+            cat = "IMPRESORAS"
+        elif "DIADEMA" in pd_upper or "AURICULAR" in pd_upper or "HEADSET" in pd_upper:
+            cat = "DIADEMAS / AUDIO"
+        elif "MOUSE" in pd_upper or "TECLADO" in pd_upper or "COMBO" in pd_upper:
+            cat = "PERIFÉRICOS / MOUSE & TECLADO"
+        elif "CELULAR" in pd_upper or "IPAD" in pd_upper or "TABLET" in pd_upper or "MOTO G" in pd_upper:
+            cat = "CELULARES / MÓVILES"
+        elif "DISCO" in pd_upper or "SSD" in pd_upper or "ALMACENAMIENTO" in pd_upper:
+            cat = "ALMACENAMIENTO / SSD"
+        elif "BASE" in pd_upper or "REFRIGERANTE" in pd_upper:
+            cat = "ACCESORIOS / BASES REFRIGERANTES"
+        elif "MORRAL" in pd_upper:
+            cat = "ACCESORIOS / MORRALES"
+        elif "CABLE" in pd_upper:
+            cat = "CABLES / CONECTIVIDAD"
+        elif "TARJETA" in pd_upper:
+            cat = "TARJETAS DE CONTROL"
+        elif "WS" in pd_upper or "THINKSTATION" in pd_upper or "WORKSTATION" in pd_upper:
+            cat = "WORKSTATIONS"
+        elif "PC" in pd_upper or "DESKTOP" in pd_upper or "CPU HP" in pd_upper:
+            cat = "DESKTOPS / PCS"
 
-        # Sección Oficial
-        sec = "VENTA"
-        if "RENTA" in sec_heading or cat == "EQUIPOS PARA RENTA":
+        # Sección Correo
+        sec = "ACCESORIOS Y PERIFÉRICOS"
+        if cat == "EQUIPOS PARA RENTA" or "RENTA" in sec_heading:
             sec = "EQUIPOS PARA RENTA"
-        elif brand == "HP":
+        elif brand == "HP" and cat in ["PORTÁTILES", "DESKTOPS / PCS", "WORKSTATIONS"]:
             sec = "HP"
-        elif brand == "LENOVO":
+        elif brand == "LENOVO" and cat in ["PORTÁTILES", "DESKTOPS / PCS", "WORKSTATIONS"]:
             sec = "LENOVO"
-        elif brand == "DELL":
+        elif brand == "DELL" and cat in ["PORTÁTILES", "DESKTOPS / PCS", "WORKSTATIONS"]:
             sec = "DELL"
         elif cat == "MONITORES":
             sec = "MONITORES"
@@ -207,8 +211,6 @@ def parse_email_tables(html_content, cid_to_file=None):
             sec = "IMPRESORAS"
         elif cat == "CELULARES / MÓVILES":
             sec = "CELULARES"
-        else:
-            sec = "ACCESORIOS Y PERIFÉRICOS"
 
         local_img = cid_to_file.get(img_filename, "")
         if not local_img:
@@ -218,6 +220,7 @@ def parse_email_tables(html_content, cid_to_file=None):
             elif cat == "DIADEMAS / AUDIO": local_img = "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=300"
             else: local_img = "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300"
 
+        # Se guardan en el orden natural en que aparecen en el correo
         products.append({
             "seccion": sec,
             "categoria": cat,
@@ -237,13 +240,11 @@ def buscar_correos_inventario(outlook_ns):
     root = outlook_ns.Folders.Item('especialista.preventa@provexpress.com.co')
     candidate_folders = []
     
-    # 1. Probar carpeta 'INVENTARIOS'
     try:
         candidate_folders.append(root.Folders.Item('INVENTARIOS'))
     except Exception:
         pass
         
-    # 2. Probar carpeta 'Bandeja de entrada'
     try:
         candidate_folders.append(root.Folders.Item('Bandeja de entrada'))
     except Exception:
@@ -317,12 +318,12 @@ def actualizar_excel_y_sistema(force=False):
     
     log_message(f"Último correo detectado: '{latest_correo['subject']}' del {latest_correo['day']} de {latest_correo['month_str']} {latest_correo['year']} ({latest_correo['received_time']})")
 
-    # Verificar si el Excel ya tiene este correo aplicado
+    # Verificar si el Excel ya tiene este correo aplicado exactamente
     try:
         wb_check = openpyxl.load_workbook(EXCEL_PATH, read_only=True, data_only=True)
         ws_check = wb_check["Generador Correo Inventario"]
-        current_subject = str(ws_check["E3"].value or "").strip()
-        current_status = str(ws_check["G3"].value or "").strip()
+        current_subject = str(ws_check["F3"].value or ws_check["E3"].value or "").strip()
+        current_status = str(ws_check["J3"].value or ws_check["G3"].value or "").strip()
         wb_check.close()
         
         if not force and current_subject.upper() == latest_correo['subject'].upper() and "ACTUALIZADO" in current_status.upper():
@@ -353,19 +354,15 @@ def actualizar_excel_y_sistema(force=False):
     except Exception as e:
         log_message(f"Aviso al extraer imágenes adjuntas: {e}")
 
-    # Parsear productos del correo
+    # Parsear productos del correo en su ORDEN EXACTO ORIGINAL (sin reordenamiento artificial)
     today_products = parse_email_tables(today_msg.HTMLBody, cid_to_file)
     if not today_products:
         log_message("⚠ No se pudieron extraer tablas de productos del correo.")
         return False
 
-    log_message(f"✓ Se extrajeron {len(today_products)} productos vigentes del correo.")
+    log_message(f"✓ Se extrajeron {len(today_products)} productos vigentes en el orden 1:1 del correo.")
 
-    # Ordenar por sección oficial
-    section_order = ['EQUIPOS PARA RENTA', 'DELL', 'HP', 'LENOVO', 'MONITORES', 'IMPRESORAS', 'CELULARES', 'ACCESORIOS Y PERIFÉRICOS']
-    today_products.sort(key=lambda p: (section_order.index(p['seccion']) if p['seccion'] in section_order else 99, p['np']))
-
-    # Obtener el stock diario de todos los correos del mismo mes
+    # Obtener el histórico de días de stock para este mes
     same_month_emails = [c for c in correos if c['month_str'] == latest_correo['month_str'] and c['year'] == latest_correo['year']]
     daily_stock_by_np = {}
     for c in same_month_emails:
@@ -383,41 +380,49 @@ def actualizar_excel_y_sistema(force=False):
     for p in today_products:
         p['dias_stock'] = daily_stock_by_np.get(p['np'], {f"day_{latest_correo['day']}": p['cantidad_actual']})
 
-    # --- MODIFICAR EXCEL EN ONEDRIVE ---
+    # --- ESCRIBIR EN EXCEL EN ONEDRIVE ---
     log_message(f"Escribiendo en Excel: {EXCEL_PATH} ...")
     
     wb = None
-    for intento in range(3):
+    for intento in range(5):
         try:
             wb = openpyxl.load_workbook(EXCEL_PATH, data_only=False)
             break
         except PermissionError:
-            log_message(f"Archivo bloqueado (abierto por usuario). Reintentando en 3s... (Intento {intento+1}/3)")
+            log_message(f"Archivo bloqueado (abierto por usuario). Reintentando en 3s... (Intento {intento+1}/5)")
             time.sleep(3)
         except Exception as e:
             log_message(f"Error abriendo Excel: {e}")
             return False
 
     if wb is None:
-        log_message("ERROR: No se pudo obtener acceso exclusivo al archivo Excel. Está abierto por otro proceso.")
+        log_message("ERROR: No se pudo obtener acceso al archivo Excel. Está abierto en Microsoft Excel.")
         return False
 
     ws_matriz = wb["Matriz Inventario"]
     ws_gen = wb["Generador Correo Inventario"]
 
-    # 1. Actualizar Hoja 3: Generador Correo Inventario
+    # 1. ACTUALIZAR HOJA 'GENERADOR CORREO INVENTARIO'
     email_date = datetime(latest_correo['year'], now.month if latest_correo['month_str'] == curr_month_str else 10, latest_correo['day'])
-    ws_gen["C3"] = email_date
-    ws_gen["E3"] = latest_correo['subject']
-    ws_gen["G3"] = "ACTUALIZADO AL DÍA"
+    
+    # Encabezado (Fila 3)
+    ws_gen["B3"].value = "Fecha del Reporte:"
+    ws_gen["C3"].value = email_date
+    ws_gen["E3"].value = "Asunto del Correo:"
+    ws_gen["F3"].value = latest_correo['subject']
+    ws_gen["I3"].value = "Estado:"
+    ws_gen["J3"].value = "ACTUALIZADO AL DÍA"
 
-    # Limpiar filas previas respetando celdas combinadas
-    for r in range(8, 160):
-        for c in range(1, 12):
-            cell = ws_gen.cell(r, c)
-            if type(cell).__name__ != 'MergedCell':
-                cell.value = None
+    # Encabezados de tabla (Fila 7)
+    headers_gen = [
+        "N°", "Sección Correo", "Categoría Hardware", "Marca",
+        "N/P (Num. Parte)", "Producto / Descripción", "Costo COP",
+        "IVA", "Fecha Ingreso", "Unidades Disponibles (HOY)", "Valor Total Stock (COP)"
+    ]
+    for col_idx, h_name in enumerate(headers_gen, start=1):
+        ws_gen.cell(7, col_idx).value = h_name
 
+    # Rellenar productos exactamente en el orden 1:1 del correo
     for idx, p in enumerate(today_products, start=1):
         target_row = 7 + idx
         ws_gen.cell(target_row, 1).value = idx
@@ -432,52 +437,60 @@ def actualizar_excel_y_sistema(force=False):
         ws_gen.cell(target_row, 10).value = p['cantidad_actual']
         ws_gen.cell(target_row, 11).value = f"=G{target_row}*J{target_row}"
 
-    log_message(f"✓ Hoja 'Generador Correo Inventario' actualizada con {len(today_products)} productos.")
+    # Limpiar filas sobrantes previas para que la hoja quede exactamente con el tamaño del correo
+    last_product_row = 7 + len(today_products)
+    for r in range(last_product_row + 1, last_product_row + 150):
+        for c in range(1, 12):
+            cell = ws_gen.cell(r, c)
+            if type(cell).__name__ != 'MergedCell':
+                cell.value = None
 
-    # 2. Actualizar Hoja 1: Matriz Inventario
-    month_label = f"{latest_correo['month_str']} {latest_correo['year']}"
-    row_map_month = {}
-    for r in range(2, ws_matriz.max_row + 1):
-        m_val = str(ws_matriz.cell(r, 1).value or "").strip()
-        np_v = ws_matriz.cell(r, 4).value
-        if m_val.upper() == month_label.upper() and np_v:
-            row_map_month[str(np_v).strip()] = r
+    log_message(f"✓ Hoja 'Generador Correo Inventario' sincronizada 1:1 con {len(today_products)} productos.")
 
-    for p in today_products:
-        np_k = p['np'].strip()
-        if np_k in row_map_month:
-            t_row = row_map_month[np_k]
-        else:
-            t_row = ws_matriz.max_row + 1
-            row_map_month[np_k] = t_row
-            ws_matriz.cell(t_row, 1).value = month_label
-            ws_matriz.cell(t_row, 2).value = p['categoria']
-            ws_matriz.cell(t_row, 3).value = p['marca']
-            ws_matriz.cell(t_row, 4).value = np_k
-            ws_matriz.cell(t_row, 5).value = p['producto']
-            ws_matriz.cell(t_row, 6).value = p['costo']
-            ws_matriz.cell(t_row, 7).value = p['iva']
-            ws_matriz.cell(t_row, 8).value = p['fecha_ingreso']
-            ws_matriz.cell(t_row, 9).value = 3950.0
+    # 2. ACTUALIZAR HOJA 'MATRIZ INVENTARIO' EN SEGUNDO PLANO
+    try:
+        month_label = f"{latest_correo['month_str']} {latest_correo['year']}"
+        row_map_month = {}
+        for r in range(2, ws_matriz.max_row + 1):
+            m_val = str(ws_matriz.cell(r, 1).value or "").strip()
+            np_v = ws_matriz.cell(r, 4).value
+            if m_val.upper() == month_label.upper() and np_v:
+                row_map_month[str(np_v).strip()] = r
 
-        # Stock Actual (Columna 10)
-        ws_matriz.cell(t_row, 10).value = p['cantidad_actual']
+        for p in today_products:
+            np_k = p['np'].strip()
+            if np_k in row_map_month:
+                t_row = row_map_month[np_k]
+            else:
+                t_row = ws_matriz.max_row + 1
+                row_map_month[np_k] = t_row
+                ws_matriz.cell(t_row, 1).value = month_label
+                ws_matriz.cell(t_row, 2).value = p['categoria']
+                ws_matriz.cell(t_row, 3).value = p['marca']
+                ws_matriz.cell(t_row, 4).value = np_k
+                ws_matriz.cell(t_row, 5).value = p['producto']
+                ws_matriz.cell(t_row, 6).value = p['costo']
+                ws_matriz.cell(t_row, 7).value = p['iva']
+                ws_matriz.cell(t_row, 8).value = p['fecha_ingreso']
+                ws_matriz.cell(t_row, 9).value = 3950.0
 
-        # Días de stock del mes (Día 1 -> Col 11, Día d -> Col 10 + d)
-        for d_key, d_qty in p['dias_stock'].items():
-            d_num = int(d_key.split('_')[1])
-            if 1 <= d_num <= 31:
-                ws_matriz.cell(t_row, 10 + d_num).value = d_qty
+            ws_matriz.cell(t_row, 10).value = p['cantidad_actual']
+            for d_key, d_qty in p['dias_stock'].items():
+                d_num = int(d_key.split('_')[1])
+                if 1 <= d_num <= 31:
+                    ws_matriz.cell(t_row, 10 + d_num).value = d_qty
+    except Exception as e:
+        log_message(f"Aviso actualizando Matriz Inventario: {e}")
 
     # Guardar Excel
     try:
         wb.save(EXCEL_PATH)
-        log_message(f"✓ Excel guardado exitosamente en OneDrive ({EXCEL_PATH}).")
+        log_message(f"✓ Excel guardado exitosamente en OneDrive: {EXCEL_PATH}")
     except Exception as e:
         log_message(f"ERROR guardando Excel: {e}")
         return False
 
-    # 3. Sincronizar inventory_data.json en proyectos para que la web también esté al día
+    # 3. Sincronizar base de datos JSON secundaria
     try:
         src_json = os.path.join(PROJECT_PATHS[0], "inventory_data.json")
         if os.path.exists(src_json):
@@ -508,9 +521,8 @@ def actualizar_excel_y_sistema(force=False):
                         json.dump(payload, f, ensure_ascii=False, indent=2)
                 except Exception:
                     pass
-            log_message("✓ Sincronización secundaria de JSON completada.")
     except Exception as e:
-        log_message(f"Aviso en sincronización JSON: {e}")
+        pass
 
     total_unidades = sum(p['cantidad_actual'] for p in today_products)
     total_valor = sum(p['costo'] * p['cantidad_actual'] for p in today_products)
