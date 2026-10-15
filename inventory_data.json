@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-10-13T14:44:39.649613",
+  "last_updated": "2026-10-15T15:07:03.379994",
   "excel_path": "C:\\Users\\especialista.prevent\\OneDrive - PROVEXPRESS SAS\\Excels Invetario\\plantilla_inventario_matriz.xlsx",
-  "total_products": 360,
+  "total_products": 358,
   "products": [
     {
       "id": 1,
@@ -7535,30 +7535,6 @@
       "imagen": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300"
     },
     {
-      "seccion": "EQUIPOS PARA RENTA",
-      "categoria": "EQUIPOS PARA RENTA",
-      "marca": "DELL",
-      "np": "6DWCJ",
-      "producto": "portatil dell pro 14/ Procesador: Intel®Core™ i5 /Memoria:8GB/Disco Duro:512/ Sistema Operativo: Win 11 pro / Pantalla: 14” /Garantía:1 año",
-      "costo": 146537.3,
-      "iva": "No",
-      "fecha_ingreso": "18/12/25",
-      "cantidad_actual": 43,
-      "imagen": "img/products/image006.png",
-      "dias_stock": {
-        "day_9": 43,
-        "day_8": 43,
-        "day_7": 43,
-        "day_6": 43,
-        "day_5": 179,
-        "day_2": 179,
-        "day_1": 180
-      },
-      "id": 316,
-      "mes": "OCTUBRE 2026",
-      "trm_ingreso": 3950.0
-    },
-    {
       "seccion": "CELULARES",
       "categoria": "CELULARES / MÓVILES",
       "marca": "APPLE",
@@ -7570,6 +7546,9 @@
       "cantidad_actual": 1,
       "imagen": "img/products/image007.png",
       "dias_stock": {
+        "day_15": 1,
+        "day_14": 1,
+        "day_13": 1,
         "day_9": 1,
         "day_8": 1,
         "day_7": 1,
@@ -7578,7 +7557,7 @@
         "day_2": 1,
         "day_1": 1
       },
-      "id": 317,
+      "id": 316,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -7594,6 +7573,9 @@
       "cantidad_actual": 17,
       "imagen": "img/products/image008.png",
       "dias_stock": {
+        "day_15": 17,
+        "day_14": 17,
+        "day_13": 17,
         "day_9": 17,
         "day_8": 17,
         "day_7": 17,
@@ -7602,7 +7584,7 @@
         "day_2": 18,
         "day_1": 18
       },
-      "id": 318,
+      "id": 317,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -7615,9 +7597,12 @@
       "costo": 3480000.0,
       "iva": "Sí",
       "fecha_ingreso": "16/04/26",
-      "cantidad_actual": 80,
+      "cantidad_actual": 67,
       "imagen": "img/products/image008.png",
       "dias_stock": {
+        "day_15": 67,
+        "day_14": 73,
+        "day_13": 73,
         "day_9": 80,
         "day_8": 82,
         "day_7": 82,
@@ -7626,7 +7611,7 @@
         "day_2": 82,
         "day_1": 82
       },
-      "id": 319,
+      "id": 318,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -7639,9 +7624,12 @@
       "costo": 3840000.0,
       "iva": "Sí",
       "fecha_ingreso": "16/04/26",
-      "cantidad_actual": 2,
+      "cantidad_actual": 1,
       "imagen": "img/products/image008.png",
       "dias_stock": {
+        "day_15": 1,
+        "day_14": 2,
+        "day_13": 2,
         "day_9": 2,
         "day_8": 2,
         "day_7": 2,
@@ -7650,7 +7638,7 @@
         "day_2": 2,
         "day_1": 2
       },
-      "id": 320,
+      "id": 319,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -7663,9 +7651,12 @@
       "costo": 3150000.0,
       "iva": "Sí",
       "fecha_ingreso": "03/07/26",
-      "cantidad_actual": 49,
+      "cantidad_actual": 27,
       "imagen": "img/products/image009.png",
       "dias_stock": {
+        "day_15": 27,
+        "day_14": 37,
+        "day_13": 37,
         "day_9": 49,
         "day_8": 49,
         "day_7": 49,
@@ -7674,7 +7665,7 @@
         "day_2": 49,
         "day_1": 49
       },
-      "id": 321,
+      "id": 320,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -7690,12 +7681,15 @@
       "cantidad_actual": 6,
       "imagen": "img/products/image010.png",
       "dias_stock": {
+        "day_15": 6,
+        "day_14": 6,
+        "day_13": 6,
         "day_9": 6,
         "day_8": 6,
         "day_7": 6,
         "day_6": 6
       },
-      "id": 322,
+      "id": 321,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -7708,9 +7702,12 @@
       "costo": 4320597.08,
       "iva": "Sí",
       "fecha_ingreso": "23/07/26",
-      "cantidad_actual": 67,
+      "cantidad_actual": 49,
       "imagen": "img/products/image011.png",
       "dias_stock": {
+        "day_15": 49,
+        "day_14": 67,
+        "day_13": 67,
         "day_9": 67,
         "day_8": 70,
         "day_7": 70,
@@ -7719,7 +7716,7 @@
         "day_2": 90,
         "day_1": 92
       },
-      "id": 323,
+      "id": 322,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -7732,9 +7729,12 @@
       "costo": 3455522.52,
       "iva": "Sí",
       "fecha_ingreso": "21/09/26",
-      "cantidad_actual": 329,
+      "cantidad_actual": 215,
       "imagen": "img/products/image012.png",
       "dias_stock": {
+        "day_15": 215,
+        "day_14": 220,
+        "day_13": 223,
         "day_9": 329,
         "day_8": 351,
         "day_7": 383,
@@ -7743,7 +7743,7 @@
         "day_2": 391,
         "day_1": 396
       },
-      "id": 324,
+      "id": 323,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -7759,6 +7759,9 @@
       "cantidad_actual": 3,
       "imagen": "img/products/image013.png",
       "dias_stock": {
+        "day_15": 3,
+        "day_14": 3,
+        "day_13": 3,
         "day_9": 3,
         "day_8": 3,
         "day_7": 3,
@@ -7767,7 +7770,7 @@
         "day_2": 8,
         "day_1": 8
       },
-      "id": 325,
+      "id": 324,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -7783,6 +7786,9 @@
       "cantidad_actual": 1,
       "imagen": "img/products/image014.png",
       "dias_stock": {
+        "day_15": 1,
+        "day_14": 1,
+        "day_13": 1,
         "day_9": 1,
         "day_8": 1,
         "day_7": 1,
@@ -7791,7 +7797,7 @@
         "day_2": 1,
         "day_1": 1
       },
-      "id": 326,
+      "id": 325,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -7807,6 +7813,9 @@
       "cantidad_actual": 25,
       "imagen": "img/products/image015.png",
       "dias_stock": {
+        "day_15": 25,
+        "day_14": 25,
+        "day_13": 25,
         "day_9": 25,
         "day_8": 25,
         "day_7": 25,
@@ -7815,7 +7824,7 @@
         "day_2": 25,
         "day_1": 25
       },
-      "id": 327,
+      "id": 326,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -7828,9 +7837,12 @@
       "costo": 3754883.96,
       "iva": "Sí",
       "fecha_ingreso": "04/08/26",
-      "cantidad_actual": 46,
+      "cantidad_actual": 45,
       "imagen": "img/products/image016.jpg",
       "dias_stock": {
+        "day_15": 45,
+        "day_14": 46,
+        "day_13": 46,
         "day_9": 46,
         "day_8": 46,
         "day_7": 46,
@@ -7839,31 +7851,7 @@
         "day_2": 52,
         "day_1": 56
       },
-      "id": 328,
-      "mes": "OCTUBRE 2026",
-      "trm_ingreso": 3950.0
-    },
-    {
-      "seccion": "DELL",
-      "categoria": "PORTÁTILES",
-      "marca": "DELL",
-      "np": "6DWCJ",
-      "producto": "portatil dell pro 14/ Procesador: Intel®Core™ i5 /Memoria:8GB/Disco Duro:512/ Sistema Operativo: Win 11 pro / Pantalla: 14” /Garantía:1 año",
-      "costo": 2276226.87,
-      "iva": "No",
-      "fecha_ingreso": "26/03/26",
-      "cantidad_actual": 43,
-      "imagen": "img/products/image006.png",
-      "dias_stock": {
-        "day_9": 43,
-        "day_8": 43,
-        "day_7": 43,
-        "day_6": 43,
-        "day_5": 179,
-        "day_2": 179,
-        "day_1": 180
-      },
-      "id": 329,
+      "id": 327,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -7879,13 +7867,16 @@
       "cantidad_actual": 47,
       "imagen": "img/products/image017.png",
       "dias_stock": {
+        "day_15": 47,
+        "day_14": 47,
+        "day_13": 47,
         "day_9": 47,
         "day_8": 49,
         "day_7": 51,
         "day_6": 51,
         "day_5": 51
       },
-      "id": 330,
+      "id": 328,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -7895,12 +7886,15 @@
       "marca": "SAMSUNG",
       "np": "LS24F320GANXZA",
       "producto": "Monitor Samsung 24\" S3 Essential full hd 120hz”",
-      "costo": 214031.99,
+      "costo": 202289.74,
       "iva": "Sí",
-      "fecha_ingreso": "16/09/26",
-      "cantidad_actual": 43,
+      "fecha_ingreso": "14/10/26",
+      "cantidad_actual": 205,
       "imagen": "img/products/image018.png",
       "dias_stock": {
+        "day_15": 205,
+        "day_14": 22,
+        "day_13": 36,
         "day_9": 43,
         "day_8": 50,
         "day_7": 53,
@@ -7909,7 +7903,7 @@
         "day_2": 73,
         "day_1": 80
       },
-      "id": 331,
+      "id": 329,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -7922,9 +7916,12 @@
       "costo": 168067.0,
       "iva": "Sí",
       "fecha_ingreso": "02/10/26",
-      "cantidad_actual": 121,
+      "cantidad_actual": 102,
       "imagen": "img/products/image019.png",
       "dias_stock": {
+        "day_15": 102,
+        "day_14": 117,
+        "day_13": 117,
         "day_9": 121,
         "day_8": 126,
         "day_7": 146,
@@ -7933,7 +7930,7 @@
         "day_2": 1,
         "day_1": 1
       },
-      "id": 332,
+      "id": 330,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -7949,12 +7946,15 @@
       "cantidad_actual": 1,
       "imagen": "img/products/image020.png",
       "dias_stock": {
+        "day_15": 1,
+        "day_14": 1,
+        "day_13": 1,
         "day_9": 1,
         "day_8": 1,
         "day_7": 1,
         "day_6": 1
       },
-      "id": 333,
+      "id": 331,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -7970,12 +7970,15 @@
       "cantidad_actual": 7,
       "imagen": "img/products/image021.png",
       "dias_stock": {
+        "day_15": 7,
+        "day_14": 7,
+        "day_13": 7,
         "day_9": 7,
         "day_8": 7,
         "day_7": 7,
         "day_6": 7
       },
-      "id": 334,
+      "id": 332,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -7991,12 +7994,15 @@
       "cantidad_actual": 1,
       "imagen": "img/products/image022.png",
       "dias_stock": {
+        "day_15": 1,
+        "day_14": 1,
+        "day_13": 1,
         "day_9": 1,
         "day_8": 1,
         "day_7": 1,
         "day_6": 1
       },
-      "id": 335,
+      "id": 333,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8012,6 +8018,9 @@
       "cantidad_actual": 7,
       "imagen": "img/products/image023.png",
       "dias_stock": {
+        "day_15": 7,
+        "day_14": 7,
+        "day_13": 7,
         "day_9": 7,
         "day_8": 8,
         "day_7": 8,
@@ -8020,7 +8029,7 @@
         "day_2": 8,
         "day_1": 8
       },
-      "id": 336,
+      "id": 334,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8036,6 +8045,9 @@
       "cantidad_actual": 7,
       "imagen": "img/products/image024.png",
       "dias_stock": {
+        "day_15": 7,
+        "day_14": 7,
+        "day_13": 7,
         "day_9": 7,
         "day_8": 7,
         "day_7": 7,
@@ -8044,7 +8056,7 @@
         "day_2": 7,
         "day_1": 7
       },
-      "id": 337,
+      "id": 335,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8060,6 +8072,9 @@
       "cantidad_actual": 1,
       "imagen": "img/products/image025.png",
       "dias_stock": {
+        "day_15": 1,
+        "day_14": 1,
+        "day_13": 1,
         "day_9": 1,
         "day_8": 1,
         "day_7": 1,
@@ -8068,7 +8083,7 @@
         "day_2": 1,
         "day_1": 1
       },
-      "id": 338,
+      "id": 336,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8084,6 +8099,9 @@
       "cantidad_actual": 1,
       "imagen": "img/products/image026.png",
       "dias_stock": {
+        "day_15": 1,
+        "day_14": 1,
+        "day_13": 1,
         "day_9": 1,
         "day_8": 1,
         "day_7": 1,
@@ -8092,7 +8110,7 @@
         "day_2": 1,
         "day_1": 1
       },
-      "id": 339,
+      "id": 337,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8108,6 +8126,9 @@
       "cantidad_actual": 1,
       "imagen": "img/products/image027.png",
       "dias_stock": {
+        "day_15": 1,
+        "day_14": 1,
+        "day_13": 1,
         "day_9": 1,
         "day_8": 1,
         "day_7": 1,
@@ -8116,7 +8137,7 @@
         "day_2": 1,
         "day_1": 1
       },
-      "id": 340,
+      "id": 338,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8132,6 +8153,9 @@
       "cantidad_actual": 1,
       "imagen": "img/products/image028.png",
       "dias_stock": {
+        "day_15": 1,
+        "day_14": 1,
+        "day_13": 1,
         "day_9": 1,
         "day_8": 1,
         "day_7": 1,
@@ -8140,7 +8164,7 @@
         "day_2": 1,
         "day_1": 1
       },
-      "id": 341,
+      "id": 339,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8153,9 +8177,12 @@
       "costo": 407935.17,
       "iva": "Sí",
       "fecha_ingreso": "05/10/26",
-      "cantidad_actual": 136,
+      "cantidad_actual": 132,
       "imagen": "img/products/image029.jpg",
       "dias_stock": {
+        "day_15": 132,
+        "day_14": 132,
+        "day_13": 133,
         "day_9": 136,
         "day_8": 138,
         "day_7": 138,
@@ -8164,7 +8191,7 @@
         "day_2": 16,
         "day_1": 16
       },
-      "id": 342,
+      "id": 340,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8177,9 +8204,12 @@
       "costo": 55024.16,
       "iva": "Sí",
       "fecha_ingreso": "24/09/26",
-      "cantidad_actual": 446,
+      "cantidad_actual": 403,
       "imagen": "img/products/image030.jpg",
       "dias_stock": {
+        "day_15": 403,
+        "day_14": 414,
+        "day_13": 435,
         "day_9": 446,
         "day_8": 448,
         "day_7": 448,
@@ -8188,7 +8218,7 @@
         "day_2": 494,
         "day_1": 497
       },
-      "id": 343,
+      "id": 341,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8204,6 +8234,9 @@
       "cantidad_actual": 22,
       "imagen": "img/products/image031.png",
       "dias_stock": {
+        "day_15": 22,
+        "day_14": 22,
+        "day_13": 22,
         "day_9": 22,
         "day_8": 22,
         "day_7": 22,
@@ -8212,7 +8245,7 @@
         "day_2": 22,
         "day_1": 22
       },
-      "id": 344,
+      "id": 342,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8225,9 +8258,12 @@
       "costo": 12386.2,
       "iva": "Sí",
       "fecha_ingreso": "14/09/26",
-      "cantidad_actual": 121,
+      "cantidad_actual": 101,
       "imagen": "img/products/image032.jpg",
       "dias_stock": {
+        "day_15": 101,
+        "day_14": 101,
+        "day_13": 113,
         "day_9": 121,
         "day_8": 139,
         "day_7": 139,
@@ -8236,7 +8272,7 @@
         "day_2": 139,
         "day_1": 139
       },
-      "id": 345,
+      "id": 343,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8252,6 +8288,9 @@
       "cantidad_actual": 101,
       "imagen": "img/products/image033.jpg",
       "dias_stock": {
+        "day_15": 101,
+        "day_14": 101,
+        "day_13": 101,
         "day_9": 101,
         "day_8": 101,
         "day_7": 101,
@@ -8260,7 +8299,7 @@
         "day_2": 106,
         "day_1": 106
       },
-      "id": 346,
+      "id": 344,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8273,9 +8312,12 @@
       "costo": 35278.73,
       "iva": "Sí",
       "fecha_ingreso": "24/09/26",
-      "cantidad_actual": 342,
+      "cantidad_actual": 335,
       "imagen": "img/products/image034.jpg",
       "dias_stock": {
+        "day_15": 335,
+        "day_14": 335,
+        "day_13": 342,
         "day_9": 342,
         "day_8": 345,
         "day_7": 345,
@@ -8284,7 +8326,7 @@
         "day_2": 356,
         "day_1": 356
       },
-      "id": 347,
+      "id": 345,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8297,9 +8339,12 @@
       "costo": 54205.85,
       "iva": "Sí",
       "fecha_ingreso": "24/09/26",
-      "cantidad_actual": 184,
+      "cantidad_actual": 138,
       "imagen": "img/products/image035.jpg",
       "dias_stock": {
+        "day_15": 138,
+        "day_14": 138,
+        "day_13": 138,
         "day_9": 184,
         "day_8": 184,
         "day_7": 184,
@@ -8308,7 +8353,7 @@
         "day_2": 218,
         "day_1": 256
       },
-      "id": 348,
+      "id": 346,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8321,9 +8366,12 @@
       "costo": 70144.19,
       "iva": "Sí",
       "fecha_ingreso": "16/07/26",
-      "cantidad_actual": 82,
+      "cantidad_actual": 79,
       "imagen": "img/products/image036.png",
       "dias_stock": {
+        "day_15": 79,
+        "day_14": 79,
+        "day_13": 79,
         "day_9": 82,
         "day_8": 83,
         "day_7": 83,
@@ -8332,7 +8380,7 @@
         "day_2": 87,
         "day_1": 87
       },
-      "id": 349,
+      "id": 347,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8345,9 +8393,12 @@
       "costo": 67688.57,
       "iva": "Sí",
       "fecha_ingreso": "24/09/26",
-      "cantidad_actual": 115,
+      "cantidad_actual": 107,
       "imagen": "img/products/image037.png",
       "dias_stock": {
+        "day_15": 107,
+        "day_14": 107,
+        "day_13": 107,
         "day_9": 115,
         "day_8": 136,
         "day_7": 136,
@@ -8356,7 +8407,7 @@
         "day_2": 143,
         "day_1": 143
       },
-      "id": 350,
+      "id": 348,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8372,6 +8423,9 @@
       "cantidad_actual": 60,
       "imagen": "img/products/image038.jpg",
       "dias_stock": {
+        "day_15": 60,
+        "day_14": 60,
+        "day_13": 60,
         "day_9": 60,
         "day_8": 121,
         "day_7": 121,
@@ -8380,7 +8434,7 @@
         "day_2": 158,
         "day_1": 158
       },
-      "id": 351,
+      "id": 349,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8396,6 +8450,9 @@
       "cantidad_actual": 200,
       "imagen": "img/products/image039.jpg",
       "dias_stock": {
+        "day_15": 200,
+        "day_14": 200,
+        "day_13": 200,
         "day_9": 200,
         "day_8": 200,
         "day_7": 200,
@@ -8404,7 +8461,7 @@
         "day_2": 200,
         "day_1": 200
       },
-      "id": 352,
+      "id": 350,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8417,9 +8474,12 @@
       "costo": 24215.61,
       "iva": "Sí",
       "fecha_ingreso": "31/08/26",
-      "cantidad_actual": 75,
+      "cantidad_actual": 66,
       "imagen": "img/products/image040.png",
       "dias_stock": {
+        "day_15": 66,
+        "day_14": 66,
+        "day_13": 75,
         "day_9": 75,
         "day_8": 75,
         "day_7": 75,
@@ -8428,7 +8488,7 @@
         "day_2": 124,
         "day_1": 124
       },
-      "id": 353,
+      "id": 351,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8444,6 +8504,9 @@
       "cantidad_actual": 200,
       "imagen": "img/products/image041.png",
       "dias_stock": {
+        "day_15": 200,
+        "day_14": 200,
+        "day_13": 200,
         "day_9": 200,
         "day_8": 200,
         "day_7": 200,
@@ -8452,7 +8515,7 @@
         "day_2": 200,
         "day_1": 200
       },
-      "id": 354,
+      "id": 352,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8468,6 +8531,9 @@
       "cantidad_actual": 7,
       "imagen": "img/products/image042.png",
       "dias_stock": {
+        "day_15": 7,
+        "day_14": 7,
+        "day_13": 7,
         "day_9": 7,
         "day_8": 7,
         "day_7": 7,
@@ -8476,7 +8542,7 @@
         "day_2": 7,
         "day_1": 7
       },
-      "id": 355,
+      "id": 353,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8492,6 +8558,9 @@
       "cantidad_actual": 1,
       "imagen": "img/products/image043.png",
       "dias_stock": {
+        "day_15": 1,
+        "day_14": 1,
+        "day_13": 1,
         "day_9": 1,
         "day_8": 1,
         "day_7": 1,
@@ -8500,7 +8569,7 @@
         "day_2": 1,
         "day_1": 1
       },
-      "id": 356,
+      "id": 354,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8516,6 +8585,9 @@
       "cantidad_actual": 18,
       "imagen": "img/products/image044.png",
       "dias_stock": {
+        "day_15": 18,
+        "day_14": 18,
+        "day_13": 18,
         "day_9": 18,
         "day_8": 18,
         "day_7": 18,
@@ -8524,7 +8596,7 @@
         "day_2": 18,
         "day_1": 18
       },
-      "id": 357,
+      "id": 355,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8537,9 +8609,12 @@
       "costo": 27750.8,
       "iva": "Sí",
       "fecha_ingreso": "18/08/26",
-      "cantidad_actual": 385,
+      "cantidad_actual": 250,
       "imagen": "img/products/image045.png",
       "dias_stock": {
+        "day_15": 250,
+        "day_14": 250,
+        "day_13": 385,
         "day_9": 385,
         "day_8": 385,
         "day_7": 385,
@@ -8548,7 +8623,7 @@
         "day_2": 385,
         "day_1": 385
       },
-      "id": 358,
+      "id": 356,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8564,6 +8639,9 @@
       "cantidad_actual": 2,
       "imagen": "img/products/image046.jpg",
       "dias_stock": {
+        "day_15": 2,
+        "day_14": 2,
+        "day_13": 2,
         "day_9": 2,
         "day_8": 2,
         "day_7": 2,
@@ -8572,7 +8650,7 @@
         "day_2": 2,
         "day_1": 2
       },
-      "id": 359,
+      "id": 357,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     },
@@ -8588,6 +8666,9 @@
       "cantidad_actual": 4,
       "imagen": "img/products/image047.jpg",
       "dias_stock": {
+        "day_15": 4,
+        "day_14": 4,
+        "day_13": 4,
         "day_9": 4,
         "day_8": 4,
         "day_7": 4,
@@ -8596,7 +8677,7 @@
         "day_2": 4,
         "day_1": 4
       },
-      "id": 360,
+      "id": 358,
       "mes": "OCTUBRE 2026",
       "trm_ingreso": 3950.0
     }

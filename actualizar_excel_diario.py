@@ -258,7 +258,7 @@ def buscar_correos_inventario(outlook_ns):
         try:
             items = f.Items
             items.Sort("[ReceivedTime]", True)
-            limit = min(30, items.Count)
+            limit = min(60, items.Count)
             for i in range(1, limit + 1):
                 try:
                     msg = items.Item(i)
@@ -300,6 +300,13 @@ def actualizar_excel_y_sistema(force=False):
     import win32com.client as win32
     try:
         outlook = win32.Dispatch('Outlook.Application').GetNamespace('MAPI')
+        # Forzar a Outlook a enviar y recibir para descargar los correos nuevos del servidor
+        try:
+            if outlook.SyncObjects.Count > 0:
+                outlook.SyncObjects.Item(1).Start()
+                time.sleep(2)
+        except Exception:
+            pass
     except Exception as e:
         log_message(f"ERROR: No se pudo conectar con Outlook: {e}")
         return False
@@ -486,6 +493,10 @@ def actualizar_excel_y_sistema(force=False):
     try:
         wb.save(EXCEL_PATH)
         log_message(f"✓ Excel guardado exitosamente en OneDrive: {EXCEL_PATH}")
+    except PermissionError:
+        log_message("⚠ ATENCIÓN: El archivo Excel está ABIERTO en Microsoft Excel.")
+        log_message("  Para que los cambios se guarden, CIERRA el archivo en Excel y vuelve a ejecutar.")
+        return False
     except Exception as e:
         log_message(f"ERROR guardando Excel: {e}")
         return False
