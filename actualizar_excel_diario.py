@@ -300,13 +300,18 @@ def actualizar_excel_y_sistema(force=False):
     import win32com.client as win32
     try:
         outlook = win32.Dispatch('Outlook.Application').GetNamespace('MAPI')
-        # Forzar a Outlook a enviar y recibir para descargar los correos nuevos del servidor
+        # Forzar a Outlook a enviar y recibir para descargar los correos nuevos del servidor de Microsoft 365
+        try:
+            outlook.SendAndReceive(False)
+        except Exception:
+            pass
         try:
             if outlook.SyncObjects.Count > 0:
                 outlook.SyncObjects.Item(1).Start()
-                time.sleep(2)
         except Exception:
             pass
+        # Dar tiempo suficiente (10s) a Exchange para completar la descarga si Outlook estaba cerrado
+        time.sleep(10)
     except Exception as e:
         log_message(f"ERROR: No se pudo conectar con Outlook: {e}")
         return False
